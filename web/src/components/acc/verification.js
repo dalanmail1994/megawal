@@ -1,0 +1,57 @@
+import { useState } from "react";
+import Container from "../co/container";
+import { Button } from "../ui/button";
+import FileDropzone from "../ui/FileDropzone";
+import { toast } from "sonner"
+import { postFileRequest } from "@/lib/api";
+
+
+
+export default function VerificationAcc({}) {
+    const [loading, setLoading] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        const formData = new FormData(e.target);
+
+        try {
+            const res = await postFileRequest('/kyc/upload', formData);
+            toast.success(res.message || "Uploaded successfully");
+            e.target.reset();
+        } catch (err) {
+            console.log(err)
+            toast.error(err?.response?.data?.message || "Upload failed");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
+  
+
+    
+    return (
+        <Container>
+            <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
+                <div className="flex flex-col space-y-1">
+                    <span className="text-sm font-medium text-gray-800">ID Card / Passport</span>
+                    <FileDropzone name="passport" />
+                </div>
+                <div className="flex flex-col space-y-1">
+                    <span className="text-sm font-medium text-gray-800">Address Proof</span>
+                    <FileDropzone name="address_proof" />
+                </div>
+                <div className="flex flex-col space-y-1">
+                    <span className="text-sm font-medium text-gray-800">Selfie with ID Card</span>
+                    <FileDropzone name="selfie" />
+                </div>
+                <Button type="submit" className='font-semibold' disabled={loading}>Upload files</Button>
+            </form>
+        </Container>
+  );
+}
+
+
+
+
