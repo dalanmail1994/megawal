@@ -1,0 +1,2313 @@
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>Safe wallet</title>
+	<meta name="robots" content="max-image-preview:large">
+	<style>
+		img:is([sizes="auto" i], [sizes^="auto," i]) {
+			contain-intrinsic-size: 3000px 1500px
+		}
+	</style>
+	<link rel="alternate" type="application/rss+xml" title="Safe wallet » Feed" href="https://safe-wallet.io/feed/">
+	<link rel="alternate" type="application/rss+xml" title="Safe wallet » Comments Feed"
+		href="https://safe-wallet.io/comments/feed/">
+	<script>
+		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/safe-wallet.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.1" } };
+		/*! This file is auto-generated */
+		!function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83d\udc26\u200d\ud83d\udd25", "\ud83d\udc26\u200b\ud83d\udd25") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
+	</script>
+	<style id="wp-emoji-styles-inline-css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<style id="classic-theme-styles-inline-css">
+		/*! This file is auto-generated */
+		.wp-block-button__link {
+			color: #fff;
+			background-color: #32373c;
+			border-radius: 9999px;
+			box-shadow: none;
+			text-decoration: none;
+			padding: calc(.667em + 2px) calc(1.333em + 2px);
+			font-size: 1.125em
+		}
+
+		.wp-block-file__button {
+			background: #32373c;
+			color: #fff;
+			text-decoration: none
+		}
+	</style>
+	<link rel="stylesheet" id="cute-alert-css"
+		href="https://safe-wallet.io/wp-content/plugins/metform/public/assets/lib/cute-alert/style.css?ver=3.9.3"
+		media="all">
+	<link rel="stylesheet" id="text-editor-style-css"
+		href="https://safe-wallet.io/wp-content/plugins/metform/public/assets/css/text-editor.css?ver=3.9.3"
+		media="all">
+	<link rel="stylesheet" id="elementor-frontend-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.3" media="all">
+	<link rel="stylesheet" id="elementor-post-63-css"
+		href="https://safe-wallet.io/wp-content/uploads/elementor/css/post-63.css?ver=1747219158" media="all">
+	<link rel="stylesheet" id="e-animation-fadeInUp-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="widget-text-editor-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/css/widget-text-editor.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="widget-image-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="widget-spacer-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/css/widget-spacer.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="e-animation-fadeIn-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="bdt-uikit-css"
+		href="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/css/bdt-uikit.css?ver=3.21.7"
+		media="all">
+	<link rel="stylesheet" id="ep-helper-css"
+		href="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/css/ep-helper.css?ver=7.18.14"
+		media="all">
+	<link rel="stylesheet" id="ep-advanced-icon-box-css"
+		href="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/css/ep-advanced-icon-box.css?ver=7.18.14"
+		media="all">
+	<link rel="stylesheet" id="widget-icon-list-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="widget-heading-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="ep-font-css"
+		href="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/css/ep-font.css?ver=7.18.14"
+		media="all">
+	<link rel="stylesheet" id="ep-review-card-grid-css"
+		href="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/css/ep-review-card-grid.css?ver=7.18.14"
+		media="all">
+	<link rel="stylesheet" id="elementor-post-62-css"
+		href="https://safe-wallet.io/wp-content/uploads/elementor/css/post-62.css?ver=1747219159" media="all">
+	<link rel="stylesheet" id="uicore_global-css"
+		href="https://safe-wallet.io/wp-content/uploads/uicore-global.css?ver=8131" media="all">
+	<link rel="stylesheet" id="google-fonts-1-css"
+		href="https://fonts.googleapis.com/css?family=Syne%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.8.1"
+		media="all">
+	<link rel="stylesheet" id="elementor-icons-shared-0-css"
+		href="https://safe-wallet.io/wp-content/plugins/uicore-framework/assets/fonts/themify-icons.css?ver=1.0.0"
+		media="all">
+	<link rel="stylesheet" id="elementor-icons-uicore-icons-css"
+		href="https://safe-wallet.io/wp-content/plugins/uicore-framework/assets/fonts/themify-icons.css?ver=1.0.0"
+		media="all">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+	<script src="https://safe-wallet.io/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+	<script src="https://safe-wallet.io/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+		id="jquery-migrate-js"></script>
+	<link rel="https://api.w.org/" href="https://safe-wallet.io/wp-json/">
+	<link rel="alternate" title="JSON" type="application/json" href="https://safe-wallet.io/wp-json/wp/v2/pages/62">
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://safe-wallet.io/xmlrpc.php?rsd">
+	<meta name="generator" content="WordPress 6.8.1">
+	<link rel="canonical" href="https://safe-wallet.io/">
+	<link rel="shortlink" href="https://safe-wallet.io/">
+	<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed"
+		href="https://safe-wallet.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsafe-wallet.io%2F">
+	<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed"
+		href="https://safe-wallet.io/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsafe-wallet.io%2F&amp;format=xml">
+	<meta name="generator"
+		content="Elementor 3.27.3; features: e_font_icon_svg, additional_custom_breakpoints, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap">
+	<meta name="theme-color" content="#3EBF4F">
+	<link rel="shortcut icon" href="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png">
+	<link rel="icon" href="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png">
+	<link rel="apple-touch-icon" href="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png">
+	<style>
+		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+			background-image: none !important;
+		}
+
+		@media screen and (max-height: 1024px) {
+
+			.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+			.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+				background-image: none !important;
+			}
+		}
+
+		@media screen and (max-height: 640px) {
+
+			.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+			.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+				background-image: none !important;
+			}
+		}
+	</style>
+
+</head>
+
+<body
+	class="home wp-singular page-template-default page page-id-62 wp-embed-responsive wp-theme-outgrid ui-a-dsmm-slide elementor-default elementor-kit-7 elementor-page elementor-page-62 uicore-menu-focus e--ua-firefox"
+	data-elementor-device-mode="desktop">
+	<div class="uicore-animation-bg"></div><!-- Custom HTML - Page Options --><!-- 1.1 uicore_before_body_content -->
+	<div class="uicore-body-content">
+		<!-- 1.2 uicore_before_page_content -->
+		<div id="uicore-page">
+
+			<div data-uils="header" data-uils-title="Header" id="wrapper-navbar" itemscope=""
+				itemtype="http://schema.org/WebSite"
+				class="uicore uicore-navbar uicore-section uicore-box uicore-h-classic uicore-sticky ui-smart-sticky uicore-transparent">
+				<div class="uicore-header-wrapper">
+					<nav class="uicore uicore-container">
+						<div class="uicore-branding " data-uils="header-branding" data-uils-title="Site Logo">
+
+							<a href="https://safe-wallet.io/" rel="home">
+								<img class="uicore uicore-logo uicore-main"
+									src="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png"
+									alt="Safe wallet" width="48" height="48">
+								<img class="uicore uicore-logo uicore-second"
+									src="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png"
+									alt="Safe wallet" width="48" height="48">
+								<img class="uicore uicore-logo uicore-mobile-main"
+									src="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png"
+									alt="Safe wallet" width="48" height="48">
+								<img loading="lazy" class="uicore uicore-logo uicore-mobile-second"
+									src="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png"
+									alt="Safe wallet" width="48" height="48">
+							</a>
+
+						</div>
+						<div class="uicore-nav-menu">
+							<div class="uicore uicore-extra" data-uils="header_extra" data-uils-title="Header Extras">
+								<div class="uicore-custom-area ">
+								</div>
+								<div class="uicore-cta-wrapper">
+									<a href="https://app.winera.co/" target="_self"
+										class="uicore-btn elementor-animation-flip">
+										<span class="ui-btn-anim-wrapp"><span class="elementor-button-text">
+												Get started </span><span class="elementor-button-text">
+												Get started </span></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="uicore-mobile-head-right">
+							<div class="uicore-cta-wrapper">
+								<a href="https://app.winera.co/" target="_self" class="uicore-btn ">
+									<span class="elementor-button-text">
+										Get started </span>
+								</a>
+							</div>
+							<div class="uicore-custom-area-mobile"></div>
+						</div>
+					</nav>
+
+				</div>
+			</div><!-- #wrapper-navbar end -->
+			<!-- 1.3 uicore_page -->
+			<div id="content" class="uicore-content">
+
+				<!-- 1.4 uicore_before_content -->
+				<div id="primary" class="content-area">
+
+					<article id="post-62" class="post-62 page type-page status-publish hentry">
+						<main class="entry-content">
+							<div data-elementor-type="wp-page" data-elementor-id="62" class="elementor elementor-62"
+								data-elementor-settings="{&quot;element_pack_global_tooltip_width&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;element_pack_global_tooltip_width_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;element_pack_global_tooltip_width_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;element_pack_global_tooltip_padding&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_padding_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_padding_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true}}">
+								<div class="elementor-element elementor-element-f6a04ba e-flex e-con-boxed e-con e-parent e-lazyloaded animated fadeIn"
+									data-id="f6a04ba" data-element_type="container"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;}">
+									<div class="e-con-inner">
+										<div class="elementor-element elementor-element-277ead3 e-flex e-con-boxed e-con e-child"
+											data-id="277ead3" data-element_type="container">
+											<div class="e-con-inner">
+												<div class="elementor-element elementor-element-e9eff64 elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit ui-split-animate elementor-widget__width-initial ui-e-a-animate ui-splitby-chars elementor-widget elementor-widget-highlighted-text"
+													data-id="e9eff64" data-element_type="widget"
+													data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+													data-widget_type="highlighted-text.default" style="opacity: 1;">
+													<div class="elementor-widget-container">
+														<h2 class="ui-e--highlighted-text words chars splitting"
+															style="---ui-word-total: 8; ---ui-char-total: 42;"><span
+																class="ui-e-headline-text elementor-repeater-item-ef50d3c"><span
+																	class="word" data-word="Jump"
+																	style="---ui-word-index: 0;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="J"
+																		style="---ui-char-index: 0;">J</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="u"
+																		style="---ui-char-index: 1;">u</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="m"
+																		style="---ui-char-index: 2;">m</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="p"
+																		style="---ui-char-index: 3;">p</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="start" style="---ui-word-index: 1;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="s"
+																		style="---ui-char-index: 4;">s</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="t"
+																		style="---ui-char-index: 5;">t</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="a"
+																		style="---ui-char-index: 6;">a</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="r"
+																		style="---ui-char-index: 7;">r</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="t"
+																		style="---ui-char-index: 8;">t</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="your" style="---ui-word-index: 2;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="y"
+																		style="---ui-char-index: 9;">y</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="o"
+																		style="---ui-char-index: 10;">o</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="u"
+																		style="---ui-char-index: 11;">u</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="r"
+																		style="---ui-char-index: 12;">r</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="crypto"
+																	style="---ui-word-index: 3;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="c"
+																		style="---ui-char-index: 13;">c</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="r"
+																		style="---ui-char-index: 14;">r</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="y"
+																		style="---ui-char-index: 15;">y</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="p"
+																		style="---ui-char-index: 16;">p</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="t"
+																		style="---ui-char-index: 17;">t</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="o"
+																		style="---ui-char-index: 18;">o</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="portfolio"
+																	style="---ui-word-index: 4;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="p"
+																		style="---ui-char-index: 19;">p</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="o"
+																		style="---ui-char-index: 20;">o</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="r"
+																		style="---ui-char-index: 21;">r</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="t"
+																		style="---ui-char-index: 22;">t</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="f"
+																		style="---ui-char-index: 23;">f</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="o"
+																		style="---ui-char-index: 24;">o</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="l"
+																		style="---ui-char-index: 25;">l</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="i"
+																		style="---ui-char-index: 26;">i</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="o"
+																		style="---ui-char-index: 27;">o</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="with" style="---ui-word-index: 5;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="w"
+																		style="---ui-char-index: 28;">w</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="i"
+																		style="---ui-char-index: 29;">i</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="t"
+																		style="---ui-char-index: 30;">t</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="h"
+																		style="---ui-char-index: 31;">h</span></span>
+															</span><span
+																class="ui-e-headline-text elementor-repeater-item-6d84e6d ui-e-headline-color"><span
+																	class="whitespace"></span><span><span
+																		class="ui-e-headline-text ui-e-headline-highlighted">
+																		<span class="word" data-word="Safe"
+																			style="---ui-word-index: 6;"><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="S"
+																				style="---ui-char-index: 32;">S</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="a"
+																				style="---ui-char-index: 33;">a</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="f"
+																				style="---ui-char-index: 34;">f</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="e"
+																				style="---ui-char-index: 35;">e</span></span><span
+																			class="whitespace"> </span><span
+																			class="word" data-word="wallet"
+																			style="---ui-word-index: 7;"><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="w"
+																				style="---ui-char-index: 36;">w</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="a"
+																				style="---ui-char-index: 37;">a</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="l"
+																				style="---ui-char-index: 38;">l</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="l"
+																				style="---ui-char-index: 39;">l</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="e"
+																				style="---ui-char-index: 40;">e</span><span
+																				class="char ui-e-animated fadeInUp"
+																				data-char="t"
+																				style="---ui-char-index: 41;">t</span></span></span><span
+																		class="uicore-svg-wrapper"><svg
+																			xmlns="http://www.w3.org/2000/svg"
+																			viewBox="0 0 500 150"
+																			preserveAspectRatio="none"></svg></span></span><span
+																	class="whitespace"></span></span></h2>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-ddf1745 elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor animated fadeInUp"
+													data-id="ddf1745" data-element_type="widget"
+													data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<div>Safe wallet is the simplest and most secure way to store,
+															buy, and trade cryptocurrencies. With top-tier security, a
+															user-friendly interface, and lightning-fast transactions,
+															managing your digital assets has never been easier.</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-94d632e elementor-widget elementor-widget-image"
+													data-id="94d632e" data-element_type="widget"
+													data-widget_type="image.default">
+													<div class="elementor-widget-container">
+														<img loading="lazy" decoding="async" width="462" height="638"
+															src="https://safe-wallet.io/wp-content/uploads/2025/02/Property-1Default-1.png"
+															class="attachment-full size-full wp-image-125" alt=""
+															srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Property-1Default-1.png 462w, https://safe-wallet.io/wp-content/uploads/2025/02/Property-1Default-1-217x300.png 217w"
+															sizes="(max-width: 462px) 100vw, 462px">
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-5798b4c elementor-widget elementor-widget-spacer"
+													data-id="5798b4c" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-24faf42 e-con-full e-flex e-con e-child"
+													data-id="24faf42" data-element_type="container">
+												</div>
+												<div class="elementor-element elementor-element-8bb5c4b elementor-widget elementor-widget-spacer"
+													data-id="8bb5c4b" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-c5c3165 e-flex e-con-boxed e-con e-parent e-lazyloaded"
+									data-id="c5c3165" data-element_type="container">
+									<div class="e-con-inner">
+										<div class="elementor-element elementor-element-f0f2a7e e-con-full e-flex e-con e-child"
+											data-id="f0f2a7e" data-element_type="container">
+											<div class="elementor-element elementor-element-c09cbb0 e-con-full e-flex e-con e-child"
+												data-id="c09cbb0" data-element_type="container">
+												<div class="elementor-element elementor-element-6d3a398 e-con-full e-flex e-con e-child"
+													data-id="6d3a398" data-element_type="container">
+													<div class="elementor-element elementor-element-9eff912 bdt-icon-type-icon elementor-position-top bdt-icon-effect-none elementor-widget elementor-widget-bdt-advanced-icon-box animated fadeInUp"
+														data-id="9eff912" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:500}"
+														data-widget_type="bdt-advanced-icon-box.default">
+														<div class="elementor-widget-container">
+															<div class="bdt-ep-advanced-icon-box">
+
+
+																<div class="bdt-ep-advanced-icon-box-icon">
+																	<span class="bdt-ep-advanced-icon-box-icon-wrap">
+
+
+
+																		<svg aria-hidden="true"
+																			class="e-font-icon-svg e-fas-fingerprint"
+																			viewBox="0 0 512 512"
+																			xmlns="http://www.w3.org/2000/svg">
+																			<path
+																				d="M256.12 245.96c-13.25 0-24 10.74-24 24 1.14 72.25-8.14 141.9-27.7 211.55-2.73 9.72 2.15 30.49 23.12 30.49 10.48 0 20.11-6.92 23.09-17.52 13.53-47.91 31.04-125.41 29.48-224.52.01-13.25-10.73-24-23.99-24zm-.86-81.73C194 164.16 151.25 211.3 152.1 265.32c.75 47.94-3.75 95.91-13.37 142.55-2.69 12.98 5.67 25.69 18.64 28.36 13.05 2.67 25.67-5.66 28.36-18.64 10.34-50.09 15.17-101.58 14.37-153.02-.41-25.95 19.92-52.49 54.45-52.34 31.31.47 57.15 25.34 57.62 55.47.77 48.05-2.81 96.33-10.61 143.55-2.17 13.06 6.69 25.42 19.76 27.58 19.97 3.33 26.81-15.1 27.58-19.77 8.28-50.03 12.06-101.21 11.27-152.11-.88-55.8-47.94-101.88-104.91-102.72zm-110.69-19.78c-10.3-8.34-25.37-6.8-33.76 3.48-25.62 31.5-39.39 71.28-38.75 112 .59 37.58-2.47 75.27-9.11 112.05-2.34 13.05 6.31 25.53 19.36 27.89 20.11 3.5 27.07-14.81 27.89-19.36 7.19-39.84 10.5-80.66 9.86-121.33-.47-29.88 9.2-57.88 28-80.97 8.35-10.28 6.79-25.39-3.49-33.76zm109.47-62.33c-15.41-.41-30.87 1.44-45.78 4.97-12.89 3.06-20.87 15.98-17.83 28.89 3.06 12.89 16 20.83 28.89 17.83 11.05-2.61 22.47-3.77 34-3.69 75.43 1.13 137.73 61.5 138.88 134.58.59 37.88-1.28 76.11-5.58 113.63-1.5 13.17 7.95 25.08 21.11 26.58 16.72 1.95 25.51-11.88 26.58-21.11a929.06 929.06 0 0 0 5.89-119.85c-1.56-98.75-85.07-180.33-186.16-181.83zm252.07 121.45c-2.86-12.92-15.51-21.2-28.61-18.27-12.94 2.86-21.12 15.66-18.26 28.61 4.71 21.41 4.91 37.41 4.7 61.6-.11 13.27 10.55 24.09 23.8 24.2h.2c13.17 0 23.89-10.61 24-23.8.18-22.18.4-44.11-5.83-72.34zm-40.12-90.72C417.29 43.46 337.6 1.29 252.81.02 183.02-.82 118.47 24.91 70.46 72.94 24.09 119.37-.9 181.04.14 246.65l-.12 21.47c-.39 13.25 10.03 24.31 23.28 24.69.23.02.48.02.72.02 12.92 0 23.59-10.3 23.97-23.3l.16-23.64c-.83-52.5 19.16-101.86 56.28-139 38.76-38.8 91.34-59.67 147.68-58.86 69.45 1.03 134.73 35.56 174.62 92.39 7.61 10.86 22.56 13.45 33.42 5.86 10.84-7.62 13.46-22.59 5.84-33.43z">
+																			</path>
+																		</svg>
+
+																	</span>
+																</div>
+
+
+																<div class="bdt-ep-advanced-icon-box-content">
+
+
+																	<h4
+																		class="bdt-ep-advanced-icon-box-title ep-title-">
+																		<span>
+																			Advanced Security </span>
+																	</h4>
+
+
+
+
+
+																	<div class="bdt-ep-advanced-icon-box-description">
+																		<p>Keep your assets safe with military-grade
+																			encryption and multi-factor authentication
+																			for maximum protection.</p>
+																	</div>
+
+																</div>
+															</div>
+
+
+
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-5f7876f e-con-full e-flex e-con e-child"
+													data-id="5f7876f" data-element_type="container">
+													<div class="elementor-element elementor-element-15ed6fb bdt-icon-type-icon elementor-position-top bdt-icon-effect-none elementor-widget elementor-widget-bdt-advanced-icon-box animated fadeInUp"
+														data-id="15ed6fb" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:700}"
+														data-widget_type="bdt-advanced-icon-box.default">
+														<div class="elementor-widget-container">
+															<div class="bdt-ep-advanced-icon-box">
+
+
+																<div class="bdt-ep-advanced-icon-box-icon">
+																	<span class="bdt-ep-advanced-icon-box-icon-wrap">
+
+
+
+																		<i aria-hidden="true" class="ti ti-mobile"></i>
+
+																	</span>
+																</div>
+
+
+																<div class="bdt-ep-advanced-icon-box-content">
+
+
+																	<h4
+																		class="bdt-ep-advanced-icon-box-title ep-title-">
+																		<span>
+																			Seamless Experience </span>
+																	</h4>
+
+
+
+
+
+																	<div class="bdt-ep-advanced-icon-box-description">
+																		<p>Enjoy smooth and hassle-free transactions
+																			with a sleek, user-friendly interface
+																			designed for everyone.</p>
+																	</div>
+
+																</div>
+															</div>
+
+
+
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-7d9f161 e-con-full e-flex e-con e-child"
+													data-id="7d9f161" data-element_type="container">
+													<div class="elementor-element elementor-element-6f9f1ed bdt-icon-type-icon elementor-position-top bdt-icon-effect-none elementor-widget elementor-widget-bdt-advanced-icon-box animated fadeInUp"
+														data-id="6f9f1ed" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:900}"
+														data-widget_type="bdt-advanced-icon-box.default">
+														<div class="elementor-widget-container">
+															<div class="bdt-ep-advanced-icon-box">
+
+
+																<div class="bdt-ep-advanced-icon-box-icon">
+																	<span class="bdt-ep-advanced-icon-box-icon-wrap">
+
+
+
+																		<svg aria-hidden="true"
+																			class="e-font-icon-svg e-fas-globe-europe"
+																			viewBox="0 0 496 512"
+																			xmlns="http://www.w3.org/2000/svg">
+																			<path
+																				d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm200 248c0 22.5-3.9 44.2-10.8 64.4h-20.3c-4.3 0-8.4-1.7-11.4-4.8l-32-32.6c-4.5-4.6-4.5-12.1.1-16.7l12.5-12.5v-8.7c0-3-1.2-5.9-3.3-8l-9.4-9.4c-2.1-2.1-5-3.3-8-3.3h-16c-6.2 0-11.3-5.1-11.3-11.3 0-3 1.2-5.9 3.3-8l9.4-9.4c2.1-2.1 5-3.3 8-3.3h32c6.2 0 11.3-5.1 11.3-11.3v-9.4c0-6.2-5.1-11.3-11.3-11.3h-36.7c-8.8 0-16 7.2-16 16v4.5c0 6.9-4.4 13-10.9 15.2l-31.6 10.5c-3.3 1.1-5.5 4.1-5.5 7.6v2.2c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8s-3.6-8-8-8H247c-3 0-5.8 1.7-7.2 4.4l-9.4 18.7c-2.7 5.4-8.2 8.8-14.3 8.8H194c-8.8 0-16-7.2-16-16V199c0-4.2 1.7-8.3 4.7-11.3l20.1-20.1c4.6-4.6 7.2-10.9 7.2-17.5 0-3.4 2.2-6.5 5.5-7.6l40-13.3c1.7-.6 3.2-1.5 4.4-2.7l26.8-26.8c2.1-2.1 3.3-5 3.3-8 0-6.2-5.1-11.3-11.3-11.3H258l-16 16v8c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8v-20c0-2.5 1.2-4.9 3.2-6.4l28.9-21.7c1.9-.1 3.8-.3 5.7-.3C358.3 56 448 145.7 448 256zM130.1 149.1c0-3 1.2-5.9 3.3-8l25.4-25.4c2.1-2.1 5-3.3 8-3.3 6.2 0 11.3 5.1 11.3 11.3v16c0 3-1.2 5.9-3.3 8l-9.4 9.4c-2.1 2.1-5 3.3-8 3.3h-16c-6.2 0-11.3-5.1-11.3-11.3zm128 306.4v-7.1c0-8.8-7.2-16-16-16h-20.2c-10.8 0-26.7-5.3-35.4-11.8l-22.2-16.7c-11.5-8.6-18.2-22.1-18.2-36.4v-23.9c0-16 8.4-30.8 22.1-39l42.9-25.7c7.1-4.2 15.2-6.5 23.4-6.5h31.2c10.9 0 21.4 3.9 29.6 10.9l43.2 37.1h18.3c8.5 0 16.6 3.4 22.6 9.4l17.3 17.3c3.4 3.4 8.1 5.3 12.9 5.3H423c-32.4 58.9-93.8 99.5-164.9 103.1z">
+																			</path>
+																		</svg>
+
+																	</span>
+																</div>
+
+
+																<div class="bdt-ep-advanced-icon-box-content">
+
+
+																	<h4
+																		class="bdt-ep-advanced-icon-box-title ep-title-">
+																		<span>
+																			Multi-Currency Support </span>
+																	</h4>
+
+
+
+
+
+																	<div class="bdt-ep-advanced-icon-box-description">
+																		<p>Store, send, and manage hundreds of
+																			cryptocurrencies securely, all from one
+																			powerful wallet.</p>
+																	</div>
+
+																</div>
+															</div>
+
+
+
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-df78618 e-con-full e-flex e-con e-child"
+													data-id="df78618" data-element_type="container">
+													<div class="elementor-element elementor-element-f734219 bdt-icon-type-icon elementor-position-top bdt-icon-effect-none elementor-widget elementor-widget-bdt-advanced-icon-box animated fadeInUp"
+														data-id="f734219" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:1000}"
+														data-widget_type="bdt-advanced-icon-box.default">
+														<div class="elementor-widget-container">
+															<div class="bdt-ep-advanced-icon-box">
+
+
+																<div class="bdt-ep-advanced-icon-box-icon">
+																	<span class="bdt-ep-advanced-icon-box-icon-wrap">
+
+
+
+																		<svg aria-hidden="true"
+																			class="e-font-icon-svg e-fas-stopwatch-20"
+																			viewBox="0 0 448 512"
+																			xmlns="http://www.w3.org/2000/svg">
+																			<path
+																				d="M398.5,190.91l.59-.61,26.59-26.58a16,16,0,0,0,0-22.63L403,118.41a16,16,0,0,0-22.63,0l-24.68,24.68A206.68,206.68,0,0,0,256,98.5V64h32a16,16,0,0,0,16-16V16A16,16,0,0,0,288,0H160a16.05,16.05,0,0,0-16,16V48a16.05,16.05,0,0,0,16,16h32V98.5A207.92,207.92,0,0,0,16.09,297.57C12.64,411.5,106.76,510.22,220.72,512,337.13,513.77,432,420,432,304A206,206,0,0,0,398.5,190.91ZM204.37,377.55a8.2,8.2,0,0,1,8.32,8.07v22.31a8.2,8.2,0,0,1-8.32,8.07H121.52a16.46,16.46,0,0,1-16.61-17.62c2.78-35.22,14.67-57.41,38.45-91.37,20.42-29.19,27.1-37.32,27.1-62.34,0-16.92-1.79-24.27-12.21-24.27-9.39,0-12.69,7.4-12.69,22.68v5.23a8.2,8.2,0,0,1-8.33,8.07h-24.9a8.2,8.2,0,0,1-8.33-8.07v-4.07c0-27.3,8.48-60.24,56.43-60.24,43,0,55.57,25.85,55.57,61,0,35.58-12.44,51.21-34.35,81.31-11.56,15-24.61,35.57-26.41,51.2ZM344,352.32c0,35.16-12.3,63.68-57.23,63.68C243.19,416,232,386.48,232,352.55V247.22c0-40.73,19.58-63.22,56.2-63.22C325,184,344,206.64,344,245.3ZM287.87,221.73c-9.41,0-13.23,7.5-13.23,20V357.68c0,13.11,3.59,20.59,13.23,20.59s13-8,13-21.27V241.06C300.89,229.79,297.88,221.73,287.87,221.73Z">
+																			</path>
+																		</svg>
+
+																	</span>
+																</div>
+
+
+																<div class="bdt-ep-advanced-icon-box-content">
+
+
+																	<h4
+																		class="bdt-ep-advanced-icon-box-title ep-title-">
+																		<span>
+																			Instant Transfers </span>
+																	</h4>
+
+
+
+
+
+																	<div class="bdt-ep-advanced-icon-box-description">
+																		<p>Transfer funds across the globe in seconds
+																			with lightning-fast transaction speeds and
+																			zero delays.</p>
+																	</div>
+
+																</div>
+															</div>
+
+
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-3960689 e-con-full e-flex e-con e-parent e-lazyloaded"
+									data-id="3960689" data-element_type="container"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-element elementor-element-e59ca67 e-con-full e-flex e-con e-child"
+										data-id="e59ca67" data-element_type="container">
+										<div class="elementor-element elementor-element-0a5cb18 elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit ui-split-animate elementor-widget__width-initial ui-e-a-animate ui-splitby-chars elementor-widget elementor-widget-highlighted-text"
+											data-id="0a5cb18" data-element_type="widget"
+											data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+											data-widget_type="highlighted-text.default" style="opacity: 1;">
+											<div class="elementor-widget-container">
+												<h2 class="ui-e--highlighted-text words chars splitting"
+													style="---ui-word-total: 7; ---ui-char-total: 35;"><span
+														class="ui-e-headline-text elementor-repeater-item-ef50d3c"><span
+															class="word" data-word="All"
+															style="---ui-word-index: 0;"><span
+																class="char ui-e-animated fadeInUp" data-char="A"
+																style="---ui-char-index: 0;">A</span><span
+																class="char ui-e-animated fadeInUp" data-char="l"
+																style="---ui-char-index: 1;">l</span><span
+																class="char ui-e-animated fadeInUp" data-char="l"
+																style="---ui-char-index: 2;">l</span></span><span
+															class="whitespace"> </span><span class="word"
+															data-word="your" style="---ui-word-index: 1;"><span
+																class="char ui-e-animated fadeInUp" data-char="y"
+																style="---ui-char-index: 3;">y</span><span
+																class="char ui-e-animated fadeInUp" data-char="o"
+																style="---ui-char-index: 4;">o</span><span
+																class="char ui-e-animated fadeInUp" data-char="u"
+																style="---ui-char-index: 5;">u</span><span
+																class="char ui-e-animated fadeInUp" data-char="r"
+																style="---ui-char-index: 6;">r</span></span><span
+															class="whitespace"> </span><span class="word"
+															data-word="investments." style="---ui-word-index: 2;"><span
+																class="char ui-e-animated fadeInUp" data-char="i"
+																style="---ui-char-index: 7;">i</span><span
+																class="char ui-e-animated fadeInUp" data-char="n"
+																style="---ui-char-index: 8;">n</span><span
+																class="char ui-e-animated fadeInUp" data-char="v"
+																style="---ui-char-index: 9;">v</span><span
+																class="char ui-e-animated fadeInUp" data-char="e"
+																style="---ui-char-index: 10;">e</span><span
+																class="char ui-e-animated fadeInUp" data-char="s"
+																style="---ui-char-index: 11;">s</span><span
+																class="char ui-e-animated fadeInUp" data-char="t"
+																style="---ui-char-index: 12;">t</span><span
+																class="char ui-e-animated fadeInUp" data-char="m"
+																style="---ui-char-index: 13;">m</span><span
+																class="char ui-e-animated fadeInUp" data-char="e"
+																style="---ui-char-index: 14;">e</span><span
+																class="char ui-e-animated fadeInUp" data-char="n"
+																style="---ui-char-index: 15;">n</span><span
+																class="char ui-e-animated fadeInUp" data-char="t"
+																style="---ui-char-index: 16;">t</span><span
+																class="char ui-e-animated fadeInUp" data-char="s"
+																style="---ui-char-index: 17;">s</span><span
+																class="char ui-e-animated fadeInUp" data-char="."
+																style="---ui-char-index: 18;">.</span></span><span
+															class="whitespace"> </span><span class="word"
+															data-word="All" style="---ui-word-index: 3;"><span
+																class="char ui-e-animated fadeInUp" data-char="A"
+																style="---ui-char-index: 19;">A</span><span
+																class="char ui-e-animated fadeInUp" data-char="l"
+																style="---ui-char-index: 20;">l</span><span
+																class="char ui-e-animated fadeInUp" data-char="l"
+																style="---ui-char-index: 21;">l</span></span><span
+															class="whitespace"> </span><span class="word" data-word="on"
+															style="---ui-word-index: 4;"><span
+																class="char ui-e-animated fadeInUp" data-char="o"
+																style="---ui-char-index: 22;">o</span><span
+																class="char ui-e-animated fadeInUp" data-char="n"
+																style="---ui-char-index: 23;">n</span></span>
+													</span><span
+														class="ui-e-headline-text elementor-repeater-item-6d84e6d ui-e-headline-color"><span
+															class="whitespace"></span><span><span
+																class="ui-e-headline-text ui-e-headline-highlighted">
+																<span class="word" data-word="Safe"
+																	style="---ui-word-index: 5;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="S"
+																		style="---ui-char-index: 24;">S</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="a"
+																		style="---ui-char-index: 25;">a</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="f"
+																		style="---ui-char-index: 26;">f</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="e"
+																		style="---ui-char-index: 27;">e</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="wallet."
+																	style="---ui-word-index: 6;"><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="w"
+																		style="---ui-char-index: 28;">w</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="a"
+																		style="---ui-char-index: 29;">a</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="l"
+																		style="---ui-char-index: 30;">l</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="l"
+																		style="---ui-char-index: 31;">l</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="e"
+																		style="---ui-char-index: 32;">e</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="t"
+																		style="---ui-char-index: 33;">t</span><span
+																		class="char ui-e-animated fadeInUp"
+																		data-char="."
+																		style="---ui-char-index: 34;">.</span></span></span><span
+																class="uicore-svg-wrapper"><svg
+																	xmlns="http://www.w3.org/2000/svg"
+																	viewBox="0 0 500 150"
+																	preserveAspectRatio="none"></svg></span></span><span
+															class="whitespace"></span></span></h2>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-bf4d33a elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+											data-id="bf4d33a" data-element_type="widget"
+											data-widget_type="icon-list.default">
+											<div class="elementor-widget-container">
+												<ul class="elementor-icon-list-items">
+													<li class="elementor-icon-list-item">
+														<span class="elementor-icon-list-icon">
+															<i aria-hidden="true" class="ti ti-check-box"></i> </span>
+														<span class="elementor-icon-list-text">Buy, sell &amp; swap the
+															cryptocurrencies you want anytime, anywhere.</span>
+													</li>
+													<li class="elementor-icon-list-item">
+														<span class="elementor-icon-list-icon">
+															<i aria-hidden="true" class="ti ti-check-box"></i> </span>
+														<span class="elementor-icon-list-text">Fortify your portfolio
+															with commodities and shield it against inflation</span>
+													</li>
+													<li class="elementor-icon-list-item">
+														<span class="elementor-icon-list-icon">
+															<i aria-hidden="true" class="ti ti-check-box"></i> </span>
+														<span class="elementor-icon-list-text">Auto-invest in the whole
+															crypto market with a single click</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-6045874 e-con-full e-flex e-con e-child"
+										data-id="6045874" data-element_type="container"
+										data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+										<div class="elementor-element elementor-element-c196562 elementor-widget elementor-widget-image"
+											data-id="c196562" data-element_type="widget"
+											data-widget_type="image.default">
+											<div class="elementor-widget-container">
+												<img loading="lazy" decoding="async" width="540" height="680"
+													src="https://safe-wallet.io/wp-content/uploads/2025/02/App-pre-1.png"
+													class="attachment-full size-full wp-image-203" alt=""
+													srcset="https://safe-wallet.io/wp-content/uploads/2025/02/App-pre-1.png 540w, https://safe-wallet.io/wp-content/uploads/2025/02/App-pre-1-238x300.png 238w, https://safe-wallet.io/wp-content/uploads/2025/02/App-pre-1-516x650.png 516w"
+													sizes="(max-width: 540px) 100vw, 540px">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-9dfc19d e-flex e-con-boxed e-con e-parent e-lazyloaded"
+									data-id="9dfc19d" data-element_type="container">
+									<div class="e-con-inner">
+										<div class="elementor-element elementor-element-83639e6 e-con-full e-flex e-con e-child"
+											data-id="83639e6" data-element_type="container">
+											<div class="elementor-element elementor-element-5fba11b e-con-full e-flex e-con e-child"
+												data-id="5fba11b" data-element_type="container"
+												data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+												<div class="elementor-element elementor-element-2a18514 e-con-full elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child"
+													data-id="2a18514" data-element_type="container">
+													<div class="elementor-element elementor-element-dec2a62 elementor-widget elementor-widget-image"
+														data-id="dec2a62" data-element_type="widget"
+														data-widget_type="image.default">
+														<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="32" height="353"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/Select-icons.png"
+																class="attachment-full size-full wp-image-249" alt="">
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-16670a1 e-con-full e-flex e-con e-child"
+													data-id="16670a1" data-element_type="container">
+													<div class="elementor-element elementor-element-f6f9a9b elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit ui-split-animate elementor-widget__width-initial ui-e-a-animate ui-splitby-chars elementor-widget elementor-widget-highlighted-text"
+														data-id="f6f9a9b" data-element_type="widget"
+														data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+														data-widget_type="highlighted-text.default" style="opacity: 1;">
+														<div class="elementor-widget-container">
+															<h3 class="ui-e--highlighted-text words chars splitting"
+																style="---ui-word-total: 6; ---ui-char-total: 23;"><span
+																	class="ui-e-headline-text elementor-repeater-item-ef50d3c"><span
+																		class="word" data-word="Swap"
+																		style="---ui-word-index: 0;"><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="S"
+																			style="---ui-char-index: 0;">S</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="w"
+																			style="---ui-char-index: 1;">w</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="a"
+																			style="---ui-char-index: 2;">a</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="p"
+																			style="---ui-char-index: 3;">p</span></span><span
+																		class="whitespace"> </span><span class="word"
+																		data-word="your"
+																		style="---ui-word-index: 1;"><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="y"
+																			style="---ui-char-index: 4;">y</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="o"
+																			style="---ui-char-index: 5;">o</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="u"
+																			style="---ui-char-index: 6;">u</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="r"
+																			style="---ui-char-index: 7;">r</span></span><span
+																		class="whitespace"> </span><span class="word"
+																		data-word="crypto"
+																		style="---ui-word-index: 2;"><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="c"
+																			style="---ui-char-index: 8;">c</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="r"
+																			style="---ui-char-index: 9;">r</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="y"
+																			style="---ui-char-index: 10;">y</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="p"
+																			style="---ui-char-index: 11;">p</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="t"
+																			style="---ui-char-index: 12;">t</span><span
+																			class="char ui-e-animated fadeInUp"
+																			data-char="o"
+																			style="---ui-char-index: 13;">o</span></span>
+																</span><span
+																	class="ui-e-headline-text elementor-repeater-item-6d84e6d ui-e-headline-color"><span
+																		class="whitespace"></span><span><span
+																			class="ui-e-headline-text ui-e-headline-highlighted"><span
+																				class="word" data-word="with"
+																				style="---ui-word-index: 3;"><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="w"
+																					style="---ui-char-index: 14;">w</span><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="i"
+																					style="---ui-char-index: 15;">i</span><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="t"
+																					style="---ui-char-index: 16;">t</span><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="h"
+																					style="---ui-char-index: 17;">h</span></span><span
+																				class="whitespace"> </span><span
+																				class="word" data-word="0"
+																				style="---ui-word-index: 4;"><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="0"
+																					style="---ui-char-index: 18;">0</span></span><span
+																				class="whitespace"> </span><span
+																				class="word" data-word="fee."
+																				style="---ui-word-index: 5;"><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="f"
+																					style="---ui-char-index: 19;">f</span><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="e"
+																					style="---ui-char-index: 20;">e</span><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="e"
+																					style="---ui-char-index: 21;">e</span><span
+																					class="char ui-e-animated fadeInUp"
+																					data-char="."
+																					style="---ui-char-index: 22;">.</span></span></span><span
+																			class="uicore-svg-wrapper"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				viewBox="0 0 500 150"
+																				preserveAspectRatio="none"></svg></span></span><span
+																		class="whitespace"></span></span></h3>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-47be1d3 elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor animated fadeInUp"
+														data-id="47be1d3" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container">
+															<p>Exchange your favorite cryptocurrencies instantly with
+																zero fees—fast, secure, and hassle-free!</p>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-120f772 e-con-full e-flex e-con e-child"
+													data-id="120f772" data-element_type="container">
+													<div class="elementor-element elementor-element-d00d2b4 elementor-widget elementor-widget-image"
+														data-id="d00d2b4" data-element_type="widget"
+														data-widget_type="image.default">
+														<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="370"
+																height="640"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/iPhone-13-Mockup.png"
+																class="attachment-full size-full wp-image-262" alt=""
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/iPhone-13-Mockup.png 370w, https://safe-wallet.io/wp-content/uploads/2025/02/iPhone-13-Mockup-173x300.png 173w"
+																sizes="(max-width: 370px) 100vw, 370px">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-9b06436 e-flex e-con-boxed e-con e-parent e-lazyloaded"
+									data-id="9b06436" data-element_type="container"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="e-con-inner">
+										<div class="elementor-element elementor-element-70f090c e-con-full e-flex e-con e-child"
+											data-id="70f090c" data-element_type="container">
+											<div class="elementor-element elementor-element-f5f2430 e-con-full e-flex e-con e-child"
+												data-id="f5f2430" data-element_type="container">
+												<div class="elementor-element elementor-element-02b3777 e-con-full e-flex e-con e-child"
+													data-id="02b3777" data-element_type="container"
+													data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+													<div class="elementor-element elementor-element-dcf2ca7 elementor-widget elementor-widget-image"
+														data-id="dcf2ca7" data-element_type="widget"
+														data-widget_type="image.default">
+														<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="696"
+																height="424"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-1.webp"
+																class="attachment-full size-full wp-image-24" alt=""
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-1.webp 696w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-1-300x183.webp 300w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-1-650x396.webp 650w"
+																sizes="(max-width: 696px) 100vw, 696px">
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-b1c4926 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-image"
+														data-id="b1c4926" data-element_type="widget"
+														data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
+														data-widget_type="image.default">
+														<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="480"
+																height="480"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-2.webp"
+																class="attachment-full size-full wp-image-25" alt=""
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-2.webp 480w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-2-300x300.webp 300w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Financial-Image-2-150x150.webp 150w"
+																sizes="(max-width: 480px) 100vw, 480px">
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-d0f6637 e-con-full e-flex e-con e-child"
+													data-id="d0f6637" data-element_type="container">
+													<div class="elementor-element elementor-element-87bbf82 ui-split-animate ui-splitby-chars elementor-widget elementor-widget-heading"
+														data-id="87bbf82" data-element_type="widget"
+														data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+														data-widget_type="heading.default" style="opacity: 0;">
+														<div class="elementor-widget-container">
+															<h2 class="elementor-heading-title elementor-size-default words chars splitting ui-e-fadeInUp"
+																style="---ui-word-total: 3; ---ui-char-total: 22;"><span
+																	class="word" data-word="Multiple"
+																	style="---ui-word-index: 0;"><span class="char"
+																		data-char="M"
+																		style="---ui-char-index: 0;">M</span><span
+																		class="char" data-char="u"
+																		style="---ui-char-index: 1;">u</span><span
+																		class="char" data-char="l"
+																		style="---ui-char-index: 2;">l</span><span
+																		class="char" data-char="t"
+																		style="---ui-char-index: 3;">t</span><span
+																		class="char" data-char="i"
+																		style="---ui-char-index: 4;">i</span><span
+																		class="char" data-char="p"
+																		style="---ui-char-index: 5;">p</span><span
+																		class="char" data-char="l"
+																		style="---ui-char-index: 6;">l</span><span
+																		class="char" data-char="e"
+																		style="---ui-char-index: 7;">e</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="Payment"
+																	style="---ui-word-index: 1;"><span class="char"
+																		data-char="P"
+																		style="---ui-char-index: 8;">P</span><span
+																		class="char" data-char="a"
+																		style="---ui-char-index: 9;">a</span><span
+																		class="char" data-char="y"
+																		style="---ui-char-index: 10;">y</span><span
+																		class="char" data-char="m"
+																		style="---ui-char-index: 11;">m</span><span
+																		class="char" data-char="e"
+																		style="---ui-char-index: 12;">e</span><span
+																		class="char" data-char="n"
+																		style="---ui-char-index: 13;">n</span><span
+																		class="char" data-char="t"
+																		style="---ui-char-index: 14;">t</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="Methods"
+																	style="---ui-word-index: 2;"><span class="char"
+																		data-char="M"
+																		style="---ui-char-index: 15;">M</span><span
+																		class="char" data-char="e"
+																		style="---ui-char-index: 16;">e</span><span
+																		class="char" data-char="t"
+																		style="---ui-char-index: 17;">t</span><span
+																		class="char" data-char="h"
+																		style="---ui-char-index: 18;">h</span><span
+																		class="char" data-char="o"
+																		style="---ui-char-index: 19;">o</span><span
+																		class="char" data-char="d"
+																		style="---ui-char-index: 20;">d</span><span
+																		class="char" data-char="s"
+																		style="---ui-char-index: 21;">s</span></span>
+															</h2>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-ac55ff0 elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget-mobile__width-inherit elementor-invisible elementor-widget elementor-widget-text-editor"
+														data-id="ac55ff0" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container">
+															<p>Safe wallet supports a wide range of payment options,
+																making it easy to buy, sell, and trade crypto. Use bank
+																transfers, credit/debit cards, and other secure payment
+																methods to fund your wallet instantly and hassle-free.
+															</p>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-6c6f624 elementor-invisible elementor-widget elementor-widget-button"
+														data-id="6c6f624" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+														data-widget_type="button.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-button-wrapper">
+																<a class="elementor-button elementor-button-link elementor-size-sm"
+																	href="https://app.safe-wallet.io">
+																	<span class="elementor-button-content-wrapper">
+																		<span class="elementor-button-icon">
+																			<i aria-hidden="true"
+																				class="ti ti-arrow-right"></i> </span>
+																		<span class="elementor-button-text">Learn
+																			more</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="elementor-element elementor-element-af43520 e-con-full e-flex e-con e-child"
+												data-id="af43520" data-element_type="container">
+												<div class="elementor-element elementor-element-ae03600 e-con-full e-flex e-con e-child"
+													data-id="ae03600" data-element_type="container">
+													<div class="elementor-element elementor-element-c04a00d ui-split-animate ui-splitby-chars elementor-widget elementor-widget-heading"
+														data-id="c04a00d" data-element_type="widget"
+														data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+														data-widget_type="heading.default" style="opacity: 0;">
+														<div class="elementor-widget-container">
+															<h2 class="elementor-heading-title elementor-size-default words chars splitting ui-e-fadeInUp"
+																style="---ui-word-total: 5; ---ui-char-total: 30;"><span
+																	class="word" data-word="Transaction"
+																	style="---ui-word-index: 0;"><span class="char"
+																		data-char="T"
+																		style="---ui-char-index: 0;">T</span><span
+																		class="char" data-char="r"
+																		style="---ui-char-index: 1;">r</span><span
+																		class="char" data-char="a"
+																		style="---ui-char-index: 2;">a</span><span
+																		class="char" data-char="n"
+																		style="---ui-char-index: 3;">n</span><span
+																		class="char" data-char="s"
+																		style="---ui-char-index: 4;">s</span><span
+																		class="char" data-char="a"
+																		style="---ui-char-index: 5;">a</span><span
+																		class="char" data-char="c"
+																		style="---ui-char-index: 6;">c</span><span
+																		class="char" data-char="t"
+																		style="---ui-char-index: 7;">t</span><span
+																		class="char" data-char="i"
+																		style="---ui-char-index: 8;">i</span><span
+																		class="char" data-char="o"
+																		style="---ui-char-index: 9;">o</span><span
+																		class="char" data-char="n"
+																		style="---ui-char-index: 10;">n</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="History"
+																	style="---ui-word-index: 1;"><span class="char"
+																		data-char="H"
+																		style="---ui-char-index: 11;">H</span><span
+																		class="char" data-char="i"
+																		style="---ui-char-index: 12;">i</span><span
+																		class="char" data-char="s"
+																		style="---ui-char-index: 13;">s</span><span
+																		class="char" data-char="t"
+																		style="---ui-char-index: 14;">t</span><span
+																		class="char" data-char="o"
+																		style="---ui-char-index: 15;">o</span><span
+																		class="char" data-char="r"
+																		style="---ui-char-index: 16;">r</span><span
+																		class="char" data-char="y"
+																		style="---ui-char-index: 17;">y</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="for" style="---ui-word-index: 2;"><span
+																		class="char" data-char="f"
+																		style="---ui-char-index: 18;">f</span><span
+																		class="char" data-char="o"
+																		style="---ui-char-index: 19;">o</span><span
+																		class="char" data-char="r"
+																		style="---ui-char-index: 20;">r</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="a" style="---ui-word-index: 3;"><span
+																		class="char" data-char="a"
+																		style="---ui-char-index: 21;">a</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="Lifetime"
+																	style="---ui-word-index: 4;"><span class="char"
+																		data-char="L"
+																		style="---ui-char-index: 22;">L</span><span
+																		class="char" data-char="i"
+																		style="---ui-char-index: 23;">i</span><span
+																		class="char" data-char="f"
+																		style="---ui-char-index: 24;">f</span><span
+																		class="char" data-char="e"
+																		style="---ui-char-index: 25;">e</span><span
+																		class="char" data-char="t"
+																		style="---ui-char-index: 26;">t</span><span
+																		class="char" data-char="i"
+																		style="---ui-char-index: 27;">i</span><span
+																		class="char" data-char="m"
+																		style="---ui-char-index: 28;">m</span><span
+																		class="char" data-char="e"
+																		style="---ui-char-index: 29;">e</span></span>
+															</h2>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-d6a16a9 elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget-mobile__width-inherit elementor-invisible elementor-widget elementor-widget-text-editor"
+														data-id="d6a16a9" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container">
+															<p>Keep track of every transaction with Safe Wallet’s
+																lifetime history feature. Access your complete trading
+																and transfer records anytime, ensuring full transparency
+																and control over your crypto journey.</p>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-8c84567 elementor-invisible elementor-widget elementor-widget-button"
+														data-id="8c84567" data-element_type="widget"
+														data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+														data-widget_type="button.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-button-wrapper">
+																<a class="elementor-button elementor-button-link elementor-size-sm"
+																	href="https://app.safe-wallet.io">
+																	<span class="elementor-button-content-wrapper">
+																		<span class="elementor-button-icon">
+																			<i aria-hidden="true"
+																				class="ti ti-arrow-right"></i> </span>
+																		<span class="elementor-button-text">Learn
+																			more</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-4f8ce76 e-con-full e-flex e-con e-child"
+													data-id="4f8ce76" data-element_type="container"
+													data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+													<div class="elementor-element elementor-element-f2c18da elementor-widget elementor-widget-image"
+														data-id="f2c18da" data-element_type="widget"
+														data-widget_type="image.default">
+														<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="960"
+																height="616"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-1.webp"
+																class="attachment-full size-full wp-image-26" alt=""
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-1.webp 960w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-1-300x193.webp 300w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-1-768x493.webp 768w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-1-650x417.webp 650w"
+																sizes="(max-width: 960px) 100vw, 960px">
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-a40253e elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-image"
+														data-id="a40253e" data-element_type="widget"
+														data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
+														data-widget_type="image.default">
+														<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="688"
+																height="578"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-2.webp"
+																class="attachment-full size-full wp-image-27" alt=""
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-2.webp 688w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-2-300x252.webp 300w, https://safe-wallet.io/wp-content/uploads/2025/02/Financial-Solution-Experience-Image-2-650x546.webp 650w"
+																sizes="(max-width: 688px) 100vw, 688px">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-daf1c7c e-flex e-con-boxed e-con e-parent"
+									data-id="daf1c7c" data-element_type="container">
+									<div class="e-con-inner">
+										<div class="elementor-element elementor-element-b22cdfe elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit ui-split-animate elementor-widget__width-initial ui-e-a-animate ui-splitby-chars elementor-widget elementor-widget-highlighted-text"
+											data-id="b22cdfe" data-element_type="widget"
+											data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+											data-widget_type="highlighted-text.default" style="opacity: 0;">
+											<div class="elementor-widget-container">
+												<h2 class="ui-e--highlighted-text words chars splitting ui-e-fadeInUp"
+													style="---ui-word-total: 6; ---ui-char-total: 39;"><span
+														class="ui-e-headline-text elementor-repeater-item-ef50d3c"><span
+															class="word" data-word="Cryptocurrencies"
+															style="---ui-word-index: 0;"><span class="char"
+																data-char="C" style="---ui-char-index: 0;">C</span><span
+																class="char" data-char="r"
+																style="---ui-char-index: 1;">r</span><span class="char"
+																data-char="y" style="---ui-char-index: 2;">y</span><span
+																class="char" data-char="p"
+																style="---ui-char-index: 3;">p</span><span class="char"
+																data-char="t" style="---ui-char-index: 4;">t</span><span
+																class="char" data-char="o"
+																style="---ui-char-index: 5;">o</span><span class="char"
+																data-char="c" style="---ui-char-index: 6;">c</span><span
+																class="char" data-char="u"
+																style="---ui-char-index: 7;">u</span><span class="char"
+																data-char="r" style="---ui-char-index: 8;">r</span><span
+																class="char" data-char="r"
+																style="---ui-char-index: 9;">r</span><span class="char"
+																data-char="e"
+																style="---ui-char-index: 10;">e</span><span class="char"
+																data-char="n"
+																style="---ui-char-index: 11;">n</span><span class="char"
+																data-char="c"
+																style="---ui-char-index: 12;">c</span><span class="char"
+																data-char="i"
+																style="---ui-char-index: 13;">i</span><span class="char"
+																data-char="e"
+																style="---ui-char-index: 14;">e</span><span class="char"
+																data-char="s"
+																style="---ui-char-index: 15;">s</span></span><span
+															class="whitespace"> </span><span class="word"
+															data-word="that" style="---ui-word-index: 1;"><span
+																class="char" data-char="t"
+																style="---ui-char-index: 16;">t</span><span class="char"
+																data-char="h"
+																style="---ui-char-index: 17;">h</span><span class="char"
+																data-char="a"
+																style="---ui-char-index: 18;">a</span><span class="char"
+																data-char="t"
+																style="---ui-char-index: 19;">t</span></span><span
+															class="whitespace"> </span><span class="word"
+															data-word="work" style="---ui-word-index: 2;"><span
+																class="char" data-char="w"
+																style="---ui-char-index: 20;">w</span><span class="char"
+																data-char="o"
+																style="---ui-char-index: 21;">o</span><span class="char"
+																data-char="r"
+																style="---ui-char-index: 22;">r</span><span class="char"
+																data-char="k"
+																style="---ui-char-index: 23;">k</span></span><span
+															class="whitespace"> </span><span class="word"
+															data-word="with" style="---ui-word-index: 3;"><span
+																class="char" data-char="w"
+																style="---ui-char-index: 24;">w</span><span class="char"
+																data-char="i"
+																style="---ui-char-index: 25;">i</span><span class="char"
+																data-char="t"
+																style="---ui-char-index: 26;">t</span><span class="char"
+																data-char="h"
+																style="---ui-char-index: 27;">h</span></span>
+													</span><span
+														class="ui-e-headline-text elementor-repeater-item-6d84e6d ui-e-headline-color"><span
+															class="whitespace"></span><span><span
+																class="ui-e-headline-text ui-e-headline-highlighted"><span
+																	class="word" data-word="Safe"
+																	style="---ui-word-index: 4;"><span class="char"
+																		data-char="S"
+																		style="---ui-char-index: 28;">S</span><span
+																		class="char" data-char="a"
+																		style="---ui-char-index: 29;">a</span><span
+																		class="char" data-char="f"
+																		style="---ui-char-index: 30;">f</span><span
+																		class="char" data-char="e"
+																		style="---ui-char-index: 31;">e</span></span><span
+																	class="whitespace"> </span><span class="word"
+																	data-word="wallet."
+																	style="---ui-word-index: 5;"><span class="char"
+																		data-char="w"
+																		style="---ui-char-index: 32;">w</span><span
+																		class="char" data-char="a"
+																		style="---ui-char-index: 33;">a</span><span
+																		class="char" data-char="l"
+																		style="---ui-char-index: 34;">l</span><span
+																		class="char" data-char="l"
+																		style="---ui-char-index: 35;">l</span><span
+																		class="char" data-char="e"
+																		style="---ui-char-index: 36;">e</span><span
+																		class="char" data-char="t"
+																		style="---ui-char-index: 37;">t</span><span
+																		class="char" data-char="."
+																		style="---ui-char-index: 38;">.</span></span></span><span
+																class="uicore-svg-wrapper"><svg
+																	xmlns="http://www.w3.org/2000/svg"
+																	viewBox="0 0 500 150"
+																	preserveAspectRatio="none"></svg></span></span><span
+															class="whitespace"></span></span></h2>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-84e3cc3 elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image"
+											data-id="84e3cc3" data-element_type="widget"
+											data-widget_type="image.default">
+											<div class="elementor-widget-container">
+												<img loading="lazy" decoding="async" width="360" height="444"
+													src="https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens-1.png"
+													class="attachment-full size-full wp-image-437" alt=""
+													srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens-1.png 360w, https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens-1-243x300.png 243w"
+													sizes="(max-width: 360px) 100vw, 360px">
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-fbb5899 elementor-hidden-mobile elementor-widget elementor-widget-image"
+											data-id="fbb5899" data-element_type="widget"
+											data-widget_type="image.default">
+											<div class="elementor-widget-container">
+												<img loading="lazy" decoding="async" width="1170" height="159"
+													src="https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens.png"
+													class="attachment-full size-full wp-image-438" alt=""
+													srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens.png 1170w, https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens-300x41.png 300w, https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens-1024x139.png 1024w, https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens-768x104.png 768w, https://safe-wallet.io/wp-content/uploads/2025/02/Crypto-tokens-650x88.png 650w"
+													sizes="(max-width: 1170px) 100vw, 1170px">
+											</div>
+										</div>
+									</div>
+								</div>
+								<section
+									class="elementor-section elementor-top-section elementor-element elementor-element-db356d0 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+									data-id="db356d0" data-element_type="section">
+									<div class="elementor-container elementor-column-gap-default">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ae02fd8"
+											data-id="ae02fd8" data-element_type="column"
+											data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<div class="elementor-background-overlay"></div>
+												<div class="elementor-element elementor-element-12f9376 elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit ui-split-animate ui-splitby-chars elementor-widget elementor-widget-heading"
+													data-id="12f9376" data-element_type="widget"
+													data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+													data-widget_type="heading.default" style="opacity: 0;">
+													<div class="elementor-widget-container">
+														<h2 class="elementor-heading-title elementor-size-default words chars splitting ui-e-fadeInUp"
+															style="---ui-word-total: 2; ---ui-char-total: 9;"><span
+																class="word" data-word="Contact"
+																style="---ui-word-index: 0;"><span class="char"
+																	data-char="C"
+																	style="---ui-char-index: 0;">C</span><span
+																	class="char" data-char="o"
+																	style="---ui-char-index: 1;">o</span><span
+																	class="char" data-char="n"
+																	style="---ui-char-index: 2;">n</span><span
+																	class="char" data-char="t"
+																	style="---ui-char-index: 3;">t</span><span
+																	class="char" data-char="a"
+																	style="---ui-char-index: 4;">a</span><span
+																	class="char" data-char="c"
+																	style="---ui-char-index: 5;">c</span><span
+																	class="char" data-char="t"
+																	style="---ui-char-index: 6;">t</span></span><span
+																class="whitespace"> </span><span class="word"
+																data-word="Us" style="---ui-word-index: 1;"><span
+																	class="char" data-char="U"
+																	style="---ui-char-index: 7;">U</span><span
+																	class="char" data-char="s"
+																	style="---ui-char-index: 8;">s</span></span> </h2>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-6e1186f elementor-icon-list--layout-inline elementor-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="6e1186f" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul class="elementor-icon-list-items elementor-inline-items">
+															<li class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-icon">
+																	<i aria-hidden="true" class="ti ti-email"></i>
+																</span>
+																<span
+																	class="elementor-icon-list-text">support@safe-wallet.io</span>
+															</li>
+															<li class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-icon">
+																	<svg aria-hidden="true"
+																		class="e-font-icon-svg e-fas-map-marker"
+																		viewBox="0 0 384 512"
+																		xmlns="http://www.w3.org/2000/svg">
+																		<path
+																			d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0z">
+																		</path>
+																	</svg> </span>
+																<span class="elementor-icon-list-text">39 Souter Head
+																	Rd, Aberdeen AB12 3LF, UK</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-9b159c4 elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit elementor-invisible elementor-widget elementor-widget-text-editor"
+													data-id="9b159c4" data-element_type="widget"
+													data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>Have questions or need assistance? Our team is here to help!
+															Reach out to us anytime.</p>
+													</div>
+												</div>
+												<div class="elementor-element elementor-element-0cf4d8a elementor-align-center elementor-invisible elementor-widget elementor-widget-button"
+													data-id="0cf4d8a" data-element_type="widget"
+													data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+													data-widget_type="button.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-button-wrapper">
+															<a class="elementor-button elementor-button-link elementor-size-sm"
+																href="https://app.winera.co//dashboard/support">
+																<span class="elementor-button-content-wrapper">
+																	<span class="elementor-button-text">Contact us
+																		now</span>
+																</span>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<div class="elementor-element elementor-element-960b043 e-con-full e-flex e-con e-parent"
+									data-id="960b043" data-element_type="container"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-element elementor-element-cd1eaf5 e-con-full e-flex e-con e-child"
+										data-id="cd1eaf5" data-element_type="container">
+										<div class="elementor-element elementor-element-d5f87c0 ui-split-animate ui-splitby-chars elementor-widget elementor-widget-heading"
+											data-id="d5f87c0" data-element_type="widget"
+											data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+											data-widget_type="heading.default" style="opacity: 0;">
+											<div class="elementor-widget-container">
+												<h2 class="elementor-heading-title elementor-size-default words chars splitting ui-e-fadeInUp"
+													style="---ui-word-total: 4; ---ui-char-total: 17;"><span
+														class="word" data-word="What" style="---ui-word-index: 0;"><span
+															class="char" data-char="W"
+															style="---ui-char-index: 0;">W</span><span class="char"
+															data-char="h" style="---ui-char-index: 1;">h</span><span
+															class="char" data-char="a"
+															style="---ui-char-index: 2;">a</span><span class="char"
+															data-char="t"
+															style="---ui-char-index: 3;">t</span></span><span
+														class="whitespace"> </span><span class="word" data-word="Our"
+														style="---ui-word-index: 1;"><span class="char" data-char="O"
+															style="---ui-char-index: 4;">O</span><span class="char"
+															data-char="u" style="---ui-char-index: 5;">u</span><span
+															class="char" data-char="r"
+															style="---ui-char-index: 6;">r</span></span><span
+														class="whitespace"> </span><span class="word"
+														data-word="Clients" style="---ui-word-index: 2;"><span
+															class="char" data-char="C"
+															style="---ui-char-index: 7;">C</span><span class="char"
+															data-char="l" style="---ui-char-index: 8;">l</span><span
+															class="char" data-char="i"
+															style="---ui-char-index: 9;">i</span><span class="char"
+															data-char="e" style="---ui-char-index: 10;">e</span><span
+															class="char" data-char="n"
+															style="---ui-char-index: 11;">n</span><span class="char"
+															data-char="t" style="---ui-char-index: 12;">t</span><span
+															class="char" data-char="s"
+															style="---ui-char-index: 13;">s</span></span><span
+														class="whitespace"> </span><span class="word" data-word="Say"
+														style="---ui-word-index: 3;"><span class="char" data-char="S"
+															style="---ui-char-index: 14;">S</span><span class="char"
+															data-char="a" style="---ui-char-index: 15;">a</span><span
+															class="char" data-char="y"
+															style="---ui-char-index: 16;">y</span></span></h2>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-f141734 elementor-widget__width-initial elementor-widget-tablet__width-initial elementor-widget-mobile__width-inherit elementor-invisible elementor-widget elementor-widget-text-editor"
+											data-id="f141734" data-element_type="widget"
+											data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+											data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Join thousands of satisfied users who trust Safe Wallet for secure
+													and seamless crypto transactions.</p>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-13268a6 elementor-invisible bdt-background-overlay-yes elementor-widget elementor-widget-bdt-review-card-grid"
+											data-id="13268a6" data-element_type="widget"
+											data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+											data-widget_type="bdt-review-card-grid.default">
+											<div class="elementor-widget-container">
+												<div class="bdt-review-card-grid">
+													<div class="bdt-ep-review-card-grid-item">
+
+														<div class="bdt-ep-review-card-grid-image">
+															<img loading="lazy" decoding="async" width="200"
+																height="200"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/11583-initials.png"
+																class="attachment-medium size-medium"
+																alt="Madam Satoshi"
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/11583-initials.png 200w, https://safe-wallet.io/wp-content/uploads/2025/02/11583-initials-150x150.png 150w"
+																sizes="(max-width: 200px) 100vw, 200px">
+														</div>
+
+														<div class="bdt-ep-review-card-grid-content">
+
+															<h3 class="bdt-ep-review-card-grid-name">
+																Madam Satoshi </h3>
+
+
+															<div class="bdt-ep-review-card-grid-text">
+																<p><em>"Safe wallet makes crypto trading effortless! The
+																		interface is smooth, and I love the zero-fee
+																		swaps!"</em></p>
+															</div>
+
+														</div>
+													</div>
+													<div class="bdt-ep-review-card-grid-item">
+
+														<div class="bdt-ep-review-card-grid-image">
+															<img loading="lazy" decoding="async" width="200"
+																height="200"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/11640-initials.png"
+																class="attachment-medium size-medium" alt="Aline Evans"
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/11640-initials.png 200w, https://safe-wallet.io/wp-content/uploads/2025/02/11640-initials-150x150.png 150w"
+																sizes="(max-width: 200px) 100vw, 200px">
+														</div>
+
+														<div class="bdt-ep-review-card-grid-content">
+
+															<h3 class="bdt-ep-review-card-grid-name">
+																Aline Evans </h3>
+
+
+															<div class="bdt-ep-review-card-grid-text">
+																<p>"I've been a client for several years and have been
+																	extremely happy with the level of service and
+																	attention to detail provided by the team at our
+																	financial solution."</p>
+															</div>
+
+														</div>
+													</div>
+													<div class="bdt-ep-review-card-grid-item">
+
+														<div class="bdt-ep-review-card-grid-image">
+															<img loading="lazy" decoding="async" width="200"
+																height="200"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/10848-initials.png"
+																class="attachment-medium size-medium"
+																alt="Salar moazzen"
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/10848-initials.png 200w, https://safe-wallet.io/wp-content/uploads/2025/02/10848-initials-150x150.png 150w"
+																sizes="(max-width: 200px) 100vw, 200px">
+														</div>
+
+														<div class="bdt-ep-review-card-grid-content">
+
+															<h3 class="bdt-ep-review-card-grid-name">
+																Salar moazzen </h3>
+
+
+															<div class="bdt-ep-review-card-grid-text">
+																<p><em>"Instant transactions with no hidden fees? Safe
+																		wallet is the best choice for crypto
+																		traders!"</em></p>
+																<h4>&nbsp;</h4>
+															</div>
+
+														</div>
+													</div>
+													<div class="bdt-ep-review-card-grid-item">
+
+														<div class="bdt-ep-review-card-grid-image">
+															<img loading="lazy" decoding="async" width="200"
+																height="200"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/3760-initials.png"
+																class="attachment-medium size-medium"
+																alt="Kasenge Musonda"
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/3760-initials.png 200w, https://safe-wallet.io/wp-content/uploads/2025/02/3760-initials-150x150.png 150w"
+																sizes="(max-width: 200px) 100vw, 200px">
+														</div>
+
+														<div class="bdt-ep-review-card-grid-content">
+
+															<h3 class="bdt-ep-review-card-grid-name">
+																Kasenge Musonda </h3>
+
+
+															<div class="bdt-ep-review-card-grid-text">
+																<p><em>"The security features give me peace of mind.
+																		Multi-factor authentication and encryption are
+																		top-notch!"</em></p>
+																<h4>&nbsp;</h4>
+															</div>
+
+														</div>
+													</div>
+													<div class="bdt-ep-review-card-grid-item">
+
+														<div class="bdt-ep-review-card-grid-image">
+															<img loading="lazy" decoding="async" width="200"
+																height="200"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/11061-initials.png"
+																class="attachment-medium size-medium" alt="Edeco"
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/11061-initials.png 200w, https://safe-wallet.io/wp-content/uploads/2025/02/11061-initials-150x150.png 150w"
+																sizes="(max-width: 200px) 100vw, 200px">
+														</div>
+
+														<div class="bdt-ep-review-card-grid-content">
+
+															<h3 class="bdt-ep-review-card-grid-name">
+																Edeco </h3>
+
+
+															<div class="bdt-ep-review-card-grid-text">
+																<p><em>"Tracking my transaction history for a lifetime
+																		is a game-changer. I never lose track of my
+																		trades!"</em></p>
+															</div>
+
+														</div>
+													</div>
+													<div class="bdt-ep-review-card-grid-item">
+
+														<div class="bdt-ep-review-card-grid-image">
+															<img loading="lazy" decoding="async" width="200"
+																height="200"
+																src="https://safe-wallet.io/wp-content/uploads/2025/02/11406-initials.png"
+																class="attachment-medium size-medium"
+																alt="Richard Hermiston"
+																srcset="https://safe-wallet.io/wp-content/uploads/2025/02/11406-initials.png 200w, https://safe-wallet.io/wp-content/uploads/2025/02/11406-initials-150x150.png 150w"
+																sizes="(max-width: 200px) 100vw, 200px">
+														</div>
+
+														<div class="bdt-ep-review-card-grid-content">
+
+															<h3 class="bdt-ep-review-card-grid-name">
+																Richard Hermiston </h3>
+
+
+															<div class="bdt-ep-review-card-grid-text">
+																<p><em>"Multiple payment options make it super easy to
+																		buy and sell crypto. This wallet is a
+																		must-have!"</em></p>
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</main>
+					</article>
+
+				</div><!-- #primary -->
+
+
+			</div><!-- #content -->
+
+			<footer id="uicore-tb-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
+				<div data-elementor-type="uicore-tb" data-elementor-id="63" class="elementor elementor-63"
+					data-elementor-settings="{&quot;element_pack_global_tooltip_width&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;element_pack_global_tooltip_width_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;element_pack_global_tooltip_width_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;element_pack_global_tooltip_padding&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_padding_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_padding_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;element_pack_global_tooltip_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true}}">
+					<div class="elementor-element elementor-element-e121c1d e-flex e-con-boxed e-con e-parent"
+						data-id="e121c1d" data-element_type="container">
+						<div class="e-con-inner">
+							<div class="elementor-element elementor-element-3a277dc e-con-full e-flex e-con e-child"
+								data-id="3a277dc" data-element_type="container">
+								<div class="elementor-element elementor-element-fe9839f e-con-full e-flex e-con e-child"
+									data-id="fe9839f" data-element_type="container"
+									data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+									<div class="elementor-element elementor-element-d1e6ab1 e-con-full e-flex e-con e-child"
+										data-id="d1e6ab1" data-element_type="container">
+										<div class="elementor-element elementor-element-792eff3 elementor-invisible elementor-widget elementor-widget-image"
+											data-id="792eff3" data-element_type="widget"
+											data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:&quot;550&quot;}"
+											data-widget_type="image.default">
+											<div class="elementor-widget-container">
+												<img width="370" height="698"
+													src="https://safe-wallet.io/wp-content/uploads/2025/02/Safe-wallet.png"
+													class="attachment-full size-full wp-image-468" alt=""
+													srcset="https://safe-wallet.io/wp-content/uploads/2025/02/Safe-wallet.png 370w, https://safe-wallet.io/wp-content/uploads/2025/02/Safe-wallet-159x300.png 159w, https://safe-wallet.io/wp-content/uploads/2025/02/Safe-wallet-345x650.png 345w"
+													sizes="(max-width: 370px) 100vw, 370px">
+											</div>
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-6162b2f e-con-full e-flex e-con e-child"
+										data-id="6162b2f" data-element_type="container">
+										<div class="elementor-element elementor-element-76eb670 ui-split-animate ui-splitby-chars elementor-widget elementor-widget-heading"
+											data-id="76eb670" data-element_type="widget"
+											data-settings="{&quot;ui_animate_split&quot;:&quot;ui-split-animate&quot;,&quot;ui_animate_split_by&quot;:&quot;chars&quot;,&quot;ui_animate_split_style&quot;:&quot;fadeInUp&quot;}"
+											data-widget_type="heading.default" style="opacity: 0;">
+											<div class="elementor-widget-container">
+												<h3 class="elementor-heading-title elementor-size-default words chars splitting ui-e-fadeInUp"
+													style="---ui-word-total: 5; ---ui-char-total: 20;"><span
+														class="word" data-word="Get" style="---ui-word-index: 0;"><span
+															class="char" data-char="G"
+															style="---ui-char-index: 0;">G</span><span class="char"
+															data-char="e" style="---ui-char-index: 1;">e</span><span
+															class="char" data-char="t"
+															style="---ui-char-index: 2;">t</span></span><span
+														class="whitespace"> </span><span class="word" data-word="the"
+														style="---ui-word-index: 1;"><span class="char" data-char="t"
+															style="---ui-char-index: 3;">t</span><span class="char"
+															data-char="h" style="---ui-char-index: 4;">h</span><span
+															class="char" data-char="e"
+															style="---ui-char-index: 5;">e</span></span><span
+														class="whitespace"> </span><span class="word" data-word="Safe"
+														style="---ui-word-index: 2;"><span class="char" data-char="S"
+															style="---ui-char-index: 6;">S</span><span class="char"
+															data-char="a" style="---ui-char-index: 7;">a</span><span
+															class="char" data-char="f"
+															style="---ui-char-index: 8;">f</span><span class="char"
+															data-char="e"
+															style="---ui-char-index: 9;">e</span></span><span
+														class="whitespace"> </span><span class="word" data-word="wallet"
+														style="---ui-word-index: 3;"><span class="char" data-char="w"
+															style="---ui-char-index: 10;">w</span><span class="char"
+															data-char="a" style="---ui-char-index: 11;">a</span><span
+															class="char" data-char="l"
+															style="---ui-char-index: 12;">l</span><span class="char"
+															data-char="l" style="---ui-char-index: 13;">l</span><span
+															class="char" data-char="e"
+															style="---ui-char-index: 14;">e</span><span class="char"
+															data-char="t"
+															style="---ui-char-index: 15;">t</span></span><span
+														class="whitespace"> </span><span class="word" data-word="app."
+														style="---ui-word-index: 4;"><span class="char" data-char="a"
+															style="---ui-char-index: 16;">a</span><span class="char"
+															data-char="p" style="---ui-char-index: 17;">p</span><span
+															class="char" data-char="p"
+															style="---ui-char-index: 18;">p</span><span class="char"
+															data-char="." style="---ui-char-index: 19;">.</span></span>
+												</h3>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-b084803 elementor-invisible elementor-widget elementor-widget-text-editor"
+											data-id="b084803" data-element_type="widget"
+											data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:&quot;300&quot;}"
+											data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Take control of your crypto journey—download the Safe Wallet app
+													today on iOS and Android!</p>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-0084cc4 e-con-full e-flex e-con e-child"
+											data-id="0084cc4" data-element_type="container">
+											<div class="elementor-element elementor-element-1798593 elementor-widget__width-initial elementor-widget elementor-widget-image"
+												data-id="1798593" data-element_type="widget"
+												data-widget_type="image.default">
+												<div class="elementor-widget-container">
+													<a href="https://app.safe-wallet.io">
+														<img width="217" height="65"
+															src="https://safe-wallet.io/wp-content/uploads/2025/02/Play-store.png"
+															class="attachment-full size-full wp-image-487" alt=""> </a>
+												</div>
+											</div>
+											<div class="elementor-element elementor-element-235fe43 elementor-widget__width-initial elementor-widget elementor-widget-image"
+												data-id="235fe43" data-element_type="widget"
+												data-widget_type="image.default">
+												<div class="elementor-widget-container">
+													<a href="https://app.safe-wallet.io">
+														<img width="218" height="65"
+															src="https://safe-wallet.io/wp-content/uploads/2025/02/Group.png"
+															class="attachment-large size-large wp-image-488" alt="">
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-ffaa34c e-con-full e-flex e-con e-child"
+											data-id="ffaa34c" data-element_type="container">
+											<div class="elementor-element elementor-element-fc8dff7 elementor-widget__width-initial elementor-widget elementor-widget-image"
+												data-id="fc8dff7" data-element_type="widget"
+												data-widget_type="image.default">
+												<div class="elementor-widget-container">
+													<a href="https://app.safe-wallet.io">
+														<img width="217" height="65"
+															src="https://safe-wallet.io/wp-content/uploads/2025/02/1.png"
+															class="attachment-large size-large wp-image-489" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="elementor-element elementor-element-b6237f6 elementor-widget__width-initial elementor-widget elementor-widget-image"
+												data-id="b6237f6" data-element_type="widget"
+												data-widget_type="image.default">
+												<div class="elementor-widget-container">
+													<a href="https://app.safe-wallet.io">
+														<img width="217" height="65"
+															src="https://safe-wallet.io/wp-content/uploads/2025/02/2.png"
+															class="attachment-large size-large wp-image-490" alt="">
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-section elementor-top-section elementor-element elementor-element-a63bee7 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="a63bee7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-27a73b9"
+								data-id="27a73b9" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+									<div class="elementor-element elementor-element-01f4d9e e-flex e-con-boxed e-con e-parent"
+										data-id="01f4d9e" data-element_type="container">
+										<div class="e-con-inner">
+											<div class="elementor-element elementor-element-0cb4442 elementor-widget elementor-widget-image"
+												data-id="0cb4442" data-element_type="widget"
+												data-widget_type="image.default">
+												<div class="elementor-widget-container">
+													<a href="/">
+														<img width="48" height="48"
+															src="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png"
+															class="attachment-full size-full wp-image-71" alt=""> </a>
+												</div>
+											</div>
+											<div class="elementor-element elementor-element-8b0f6ac elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-text-editor"
+												data-id="8b0f6ac" data-element_type="widget"
+												data-widget_type="text-editor.default">
+												<div class="elementor-widget-container">
+													<p>Safe Wallet is a secure and user-friendly cryptocurrency wallet
+														designed to empower users with seamless transactions, advanced
+														security, and multi-currency support. Whether you’re a beginner
+														or a seasoned trader, Safe Wallet ensures your digital assets
+														are always protected and easily accessible.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<section
+										class="elementor-section elementor-inner-section elementor-element elementor-element-79d1554 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+										data-id="79d1554" data-element_type="section">
+										<div class="elementor-container elementor-column-gap-no">
+											<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3583376 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile"
+												data-id="3583376" data-element_type="column">
+												<div class="elementor-widget-wrap elementor-element-populated">
+													<div class="elementor-element elementor-element-18af935 elementor-widget elementor-widget-heading"
+														data-id="18af935" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-heading-title elementor-size-default">
+																Features</h4>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-0b938c8 elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+														data-id="0b938c8" data-element_type="widget"
+														data-widget_type="icon-list.default">
+														<div class="elementor-widget-container">
+															<ul class="elementor-icon-list-items">
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">About
+																			us</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span
+																			class="elementor-icon-list-text">Careers</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">User
+																			terms</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">Legal
+																			Information</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-9263346 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile"
+												data-id="9263346" data-element_type="column">
+												<div class="elementor-widget-wrap elementor-element-populated">
+													<div class="elementor-element elementor-element-cb6f6af elementor-widget elementor-widget-heading"
+														data-id="cb6f6af" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-heading-title elementor-size-default">
+																Product</h4>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-a72715f elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+														data-id="a72715f" data-element_type="widget"
+														data-widget_type="icon-list.default">
+														<div class="elementor-widget-container">
+															<ul class="elementor-icon-list-items">
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">Banking
+																			Comparators</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">Transfer
+																			Account</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">Revenue
+																			Financing</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span
+																			class="elementor-icon-list-text">API</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-99e5744 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile"
+												data-id="99e5744" data-element_type="column">
+												<div class="elementor-widget-wrap elementor-element-populated">
+													<div class="elementor-element elementor-element-edbc01c elementor-widget elementor-widget-heading"
+														data-id="edbc01c" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-heading-title elementor-size-default">
+																Social Media</h4>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-805f61e elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+														data-id="805f61e" data-element_type="widget"
+														data-widget_type="icon-list.default">
+														<div class="elementor-widget-container">
+															<ul class="elementor-icon-list-items">
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span
+																			class="elementor-icon-list-text">Instagram</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span
+																			class="elementor-icon-list-text">Facebook</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span
+																			class="elementor-icon-list-text">LinkedIn</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span
+																			class="elementor-icon-list-text">Twitter</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2433c2a"
+												data-id="2433c2a" data-element_type="column">
+												<div class="elementor-widget-wrap elementor-element-populated">
+													<div class="elementor-element elementor-element-2582abf elementor-widget elementor-widget-heading"
+														data-id="2582abf" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h4 class="elementor-heading-title elementor-size-default">
+																Contact</h4>
+														</div>
+													</div>
+													<div class="elementor-element elementor-element-2fe2905 elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+														data-id="2fe2905" data-element_type="widget"
+														data-widget_type="icon-list.default">
+														<div class="elementor-widget-container">
+															<ul class="elementor-icon-list-items">
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span
+																			class="elementor-icon-list-text">hello@safe-wallet.io</span>
+																	</a>
+																</li>
+																<li class="elementor-icon-list-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">39 Souter
+																			Head Rd, Aberdeen AB12 3LF, UK</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+									<div class="elementor-section elementor-inner-section elementor-element elementor-element-be26eda elementor-reverse-tablet elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+										data-id="be26eda" data-element_type="section">
+										<div class="elementor-container elementor-column-gap-no">
+											<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-9231bda"
+												data-id="9231bda" data-element_type="column">
+												<div class="elementor-widget-wrap elementor-element-populated">
+													<div class="elementor-element elementor-element-87ee4e9 elementor-widget elementor-widget-text-editor"
+														data-id="87ee4e9" data-element_type="widget"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container">
+															<p>Copyright: © 2024-2025 Safe wallet. All Rights Reserved.
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e590612"
+												data-id="e590612" data-element_type="column">
+												<div class="elementor-widget-wrap elementor-element-populated">
+													<div class="elementor-element elementor-element-0ee9aa6 elementor-icon-list--layout-inline elementor-align-right elementor-tablet-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+														data-id="0ee9aa6" data-element_type="widget"
+														data-widget_type="icon-list.default">
+														<div class="elementor-widget-container">
+															<ul
+																class="elementor-icon-list-items elementor-inline-items">
+																<li
+																	class="elementor-icon-list-item elementor-inline-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">Terms
+																			&amp; Condditions</span>
+																	</a>
+																</li>
+																<li
+																	class="elementor-icon-list-item elementor-inline-item">
+																	<a href="#">
+
+																		<span class="elementor-icon-list-text">Privacy
+																			Policy</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- 1.5 uicore_content_end -->
+		</div><!-- #page -->
+
+		<div id="uicore-back-to-top" class="uicore-back-to-top uicore-i-arrow uicore_hide_mobile"></div>
+		<div class="uicore-navigation-wrapper uicore-navbar uicore-section uicore-box uicore-mobile-menu-wrapper">
+			<nav class="uicore uicore-container">
+				<div class="uicore-branding uicore-mobile">
+					<a href="https://safe-wallet.io/" rel="home">
+						<img class="uicore uicore-logo"
+							src="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png" alt="Safe wallet">
+					</a>
+				</div>
+
+
+				<div class="uicore-branding uicore-desktop">
+					<a href="https://safe-wallet.io/" rel="home">
+						<img class="uicore uicore-logo"
+							src="https://safe-wallet.io/wp-content/uploads/2025/02/32-square.png" alt="Safe wallet">
+					</a>
+				</div>
+
+
+
+				<div class="uicore-mobile-head-right">
+
+
+					<button type="button" class="uicore-toggle uicore-ham" aria-label="mobile-menu">
+						<span class="bars">
+							<span class="bar"></span>
+							<span class="bar"></span>
+							<span class="bar"></span>
+						</span>
+					</button>
+				</div>
+			</nav>
+			<div class="uicore-navigation-content">
+				<div class="uicore uicore-extra" data-uils="header_extra" data-uils-title="Header Extras">
+					<div class="uicore-custom-area ">
+					</div>
+					<div class="uicore-cta-wrapper">
+						<a href="https://app.winera.co/" target="_self" class="uicore-btn ">
+							<span class="elementor-button-text">
+								Get started </span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 1.6 uicore_body_end -->
+	</div>
+	<!-- 1.7 uicore_after_body_content -->
+	<script>
+		var uicore_frontend = { 'back': 'Back', 'rtl': '', 'mobile_br': '1025' };
+		console.log('Using Outgrid v.2.0.4');
+		console.log('Powered By UiCore Framework v.6.0.4');
+	</script>
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/outgrid\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<div class="ui-cursor ui-cursor-main"
+		style="--x: 907px; --y: 677px; --width: 42px; --height: 42px; --scale: 1; mix-blend-mode: unset; --border: var(--e-global-color-uicore_primary); --bg: tarnsparent; opacity: 1;">
+	</div>
+	<script>
+		const lazyloadRunObserver = () => {
+			const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);
+			const lazyloadBackgroundObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						let lazyloadBackground = entry.target;
+						if (lazyloadBackground) {
+							lazyloadBackground.classList.add('e-lazyloaded');
+						}
+						lazyloadBackgroundObserver.unobserve(entry.target);
+					}
+				});
+			}, { rootMargin: '200px 0px 200px 0px' });
+			lazyloadBackgrounds.forEach((lazyloadBackground) => {
+				lazyloadBackgroundObserver.observe(lazyloadBackground);
+			});
+		};
+		const events = [
+			'DOMContentLoaded',
+			'elementor/lazyload/observe',
+		];
+		events.forEach((event) => {
+			document.addEventListener(event, lazyloadRunObserver);
+		});
+	</script>
+	<link rel="stylesheet" id="ui-e-split-css"
+		href="https://safe-wallet.io/wp-content/plugins/uicore-animate/assets/css/split.css?ver=2.1.4" media="all">
+	<link rel="stylesheet" id="font-awesome-5-all-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="font-awesome-4-shim-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.27.3"
+		media="all">
+	<link rel="stylesheet" id="ui-e-highlighted-text-css"
+		href="https://safe-wallet.io/wp-content/plugins/uicore-elements/assets/css/elements/highlighted-text.css?ver=1.0.16"
+		media="all">
+	<link rel="stylesheet" id="e-animation-fadeInRight-css"
+		href="https://safe-wallet.io/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInRight.min.css?ver=3.27.3"
+		media="all">
+	<script src="https://safe-wallet.io/wp-content/plugins/metform/public/assets/lib/cute-alert/cute-alert.js?ver=3.9.3"
+		id="cute-alert-js"></script>
+	<script id="bdt-uikit-js-extra">
+		var element_pack_ajax_login_config = { "ajaxurl": "https:\/\/safe-wallet.io\/wp-admin\/admin-ajax.php", "language": "en", "loadingmessage": "Sending user info, please wait...", "unknownerror": "Unknown error, make sure access is correct!" };
+		var ElementPackConfig = { "ajaxurl": "https:\/\/safe-wallet.io\/wp-admin\/admin-ajax.php", "nonce": "923930592e", "data_table": { "language": { "sLengthMenu": "Show _MENU_ Entries", "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries", "sSearch": "Search :", "sZeroRecords": "No matching records found", "oPaginate": { "sPrevious": "Previous", "sNext": "Next" } } }, "contact_form": { "sending_msg": "Sending message please wait...", "captcha_nd": "Invisible captcha not defined!", "captcha_nr": "Could not get invisible captcha response!" }, "mailchimp": { "subscribing": "Subscribing you please wait..." }, "search": { "more_result": "More Results", "search_result": "SEARCH RESULT", "not_found": "not found" }, "words_limit": { "read_more": "[read more]", "read_less": "[read less]" }, "elements_data": { "sections": [], "columns": [], "widgets": [] } };
+	</script>
+	<script src="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/js/bdt-uikit.min.js?ver=3.21.7"
+		id="bdt-uikit-js"></script>
+	<script
+		src="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-advanced-icon-box.min.js?ver=7.18.14"
+		id="ep-advanced-icon-box-js"></script>
+	<script src="https://safe-wallet.io/wp-content/uploads/uicore-global.js?ver=8131" id="uicore_global-js"></script>
+	<script
+		src="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/vendor/js/ep-text-read-more-toggle.min.js?ver=7.18.14"
+		id="ep-text-read-more-toggle-js"></script>
+	<script
+		src="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/js/common/helper.min.js?ver=7.18.14"
+		id="element-pack-helper-js"></script>
+	<script src="https://safe-wallet.io/wp-content/plugins/uicore-animate/assets/js/split.js?ver=2.1.4"
+		id="ui-e-split-js"></script>
+	<script
+		src="https://safe-wallet.io/wp-content/plugins/bdthemes-element-pack/assets/js/modules/ep-background-overlay.min.js?ver=7.18.14"
+		id="ep-background-overlay-js"></script>
+	<script
+		src="https://safe-wallet.io/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.27.3"
+		id="font-awesome-4-shim-js"></script>
+	<script
+		src="https://safe-wallet.io/wp-content/plugins/uicore-elements/assets/js/elements/highlighted-text.js?ver=1.0.16"
+		id="ui-e-highlighted-text-js"></script>
+	<script src="https://safe-wallet.io/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.27.3"
+		id="elementor-webpack-runtime-js"></script>
+	<script src="https://safe-wallet.io/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.27.3"
+		id="elementor-frontend-modules-js"></script>
+	<script src="https://safe-wallet.io/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"
+		id="jquery-ui-core-js"></script>
+	<script id="elementor-frontend-js-before">
+		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } }, "hasCustomBreakpoints": false }, "version": "3.27.3", "is_static": false, "experimentalFeatures": { "e_font_icon_svg": true, "additional_custom_breakpoints": true, "container": true, "e_swiper_latest": true, "e_onboarding": true, "home_screen": true, "nested-elements": true, "editor_v2": true, "e_element_cache": true, "link-in-bio": true, "floating-buttons": true, "launchpad-checklist": true }, "urls": { "assets": "https:\/\/safe-wallet.io\/wp-content\/plugins\/elementor\/assets\/", "ajaxurl": "https:\/\/safe-wallet.io\/wp-admin\/admin-ajax.php", "uploadUrl": "https:\/\/safe-wallet.io\/wp-content\/uploads" }, "nonces": { "floatingButtonsClickTracking": "449943a504" }, "swiperClass": "swiper", "settings": { "page": { "element_pack_global_tooltip_width": { "unit": "px", "size": "", "sizes": [] }, "element_pack_global_tooltip_width_tablet": { "unit": "px", "size": "", "sizes": [] }, "element_pack_global_tooltip_width_mobile": { "unit": "px", "size": "", "sizes": [] }, "element_pack_global_tooltip_padding": { "unit": "px", "top": "", "right": "", "bottom": "", "left": "", "isLinked": true }, "element_pack_global_tooltip_padding_tablet": { "unit": "px", "top": "", "right": "", "bottom": "", "left": "", "isLinked": true }, "element_pack_global_tooltip_padding_mobile": { "unit": "px", "top": "", "right": "", "bottom": "", "left": "", "isLinked": true }, "element_pack_global_tooltip_border_radius": { "unit": "px", "top": "", "right": "", "bottom": "", "left": "", "isLinked": true }, "element_pack_global_tooltip_border_radius_tablet": { "unit": "px", "top": "", "right": "", "bottom": "", "left": "", "isLinked": true }, "element_pack_global_tooltip_border_radius_mobile": { "unit": "px", "top": "", "right": "", "bottom": "", "left": "", "isLinked": true } }, "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 62, "title": "Safe%20wallet", "excerpt": "", "featuredImage": false } };
+	</script>
+	<script src="https://safe-wallet.io/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.3"
+		id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+	<style>
+		.uicore-animate-scroll {
+			animation: .5s linear uicoreFadeIn both;
+			animation-timeline: view(block);
+		}
+	</style>
+	<script>
+		(function () {
+			const supportsAnimationTimeline = CSS.supports("animation-timeline", "scroll()");
+
+			if (!supportsAnimationTimeline && document.querySelector('.uicore-animate-scroll')) {
+				const script = document.createElement('script');
+				script.src = "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
+				script.async = true;
+				document.head.appendChild(script);
+			}
+		})();
+	</script>
+
+
+</body>
+
+</html>
