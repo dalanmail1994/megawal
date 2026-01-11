@@ -14,6 +14,8 @@ class Message extends Model
         'from',
         'ticket_id',
         'is_admin',
+        'read_by_admin_at',
+        'read_by_user_at',
     ];
 
     public function sender()

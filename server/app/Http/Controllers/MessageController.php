@@ -30,8 +30,26 @@ class MessageController extends Controller
         return response()->json($message, 201);
     }
 
-    public function index($ticketId)
+    public function index(Request $request, $ticketId)
     {
-        return Message::where('ticket_id', $ticketId)->with('sender')->get();
+        $user = $request->user();
+        $isAdmin = $user->user_type_id < 4;
+
+        if ($isAdmin) {
+            Message::where('ticket_id', $ticketId)
+                ->where('is_admin', false)
+                ->whereNull('read_by_admin_at')
+                ->update(['read_by_admin_at' => now()]);
+        } else {
+            Message::where('ticket_id', $ticketId)
+                ->where('is_admin', true)
+                ->whereNull('read_by_user_at')
+                ->update(['read_by_user_at' => now()]);
+        }
+
+        return Message::where('ticket_id', $ticketId)
+            ->with('sender')
+            ->orderBy('created_at')
+            ->get();
     }
 }

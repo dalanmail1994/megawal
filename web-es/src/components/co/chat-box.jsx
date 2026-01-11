@@ -1,6 +1,7 @@
 // src/components/co/chat-box.jsx
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { toast } from 'sonner'
 
 import Container from '@/components/co/container'
 import { Input } from '@/components/ui/input'
@@ -20,16 +21,31 @@ export default function ChatBox({ userId }) {
   const [chosedTicket, setChosedTicket] = useState()
   const [messages, setMessages] = useState()
   const [content, setContent] = useState('')
+  const lastMessageIdRef = useRef(null)
+  const lastUnreadTotalRef = useRef(null)
 
   useEffect(() => {
     if (chosedTicket) {
+      lastMessageIdRef.current = null
       getMessage(chosedTicket?.id)
     }
   }, [chosedTicket])
 
-  const getMessage = async (id) => {
+  const getMessage = async (id, { notify } = { notify: false }) => {
     try {
       const res = await getRequest(`/tickets/${id}/messages`)
+      if (Array.isArray(res) && res.length > 0) {
+        const lastMessage = res[res.length - 1]
+        const previousMessageId = lastMessageIdRef.current
+        if (notify && previousMessageId && lastMessage?.id && lastMessage.id !== previousMessageId) {
+          const isFromOtherSide = pathname === '/admin/tickets' ? !lastMessage.is_admin : lastMessage.is_admin
+          if (isFromOtherSide) {
+            const sender = lastMessage?.sender?.email || (lastMessage.is_admin ? 'Support' : 'Client')
+            toast(`New message from ${sender}`)
+          }
+        }
+        lastMessageIdRef.current = lastMessage?.id || previousMessageId
+      }
       setMessages(res)
     } catch (err) {
       // handle error silently
@@ -39,6 +55,13 @@ export default function ChatBox({ userId }) {
   const getTickets = async () => {
     try {
       const res = await getRequest('/tickets', { all: pathname.includes('/admin/'), userid: userId })
+      if (Array.isArray(res)) {
+        const totalUnread = res.reduce((sum, ticket) => sum + (ticket?.unread_count || 0), 0)
+        if (lastUnreadTotalRef.current !== null && totalUnread > lastUnreadTotalRef.current) {
+          toast('New ticket reply received')
+        }
+        lastUnreadTotalRef.current = totalUnread
+      }
       setTickets(res)
     } catch (err) {
       // handle error silently
@@ -49,6 +72,22 @@ export default function ChatBox({ userId }) {
     getTickets()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getTickets()
+    }, 12000)
+    return () => clearInterval(interval)
+  }, [pathname, userId])
+
+  useEffect(() => {
+    if (!chosedTicket?.id) return
+    const interval = setInterval(() => {
+      getMessage(chosedTicket.id, { notify: true })
+      getTickets()
+    }, 8000)
+    return () => clearInterval(interval)
+  }, [chosedTicket?.id, pathname])
 
   const sendMessage = async (e) => {
     e.preventDefault()
@@ -62,6 +101,7 @@ export default function ChatBox({ userId }) {
       // רענון הודעות לאחר שליחה
       if (chosedTicket?.id) {
         getMessage(chosedTicket.id)
+        getTickets()
       }
     } catch (err) {
       // handle error silently
@@ -146,7 +186,7 @@ export default function ChatBox({ userId }) {
               {messages == null && chosedTicket !== undefined && <span>Loading...</span>}
 
               {messages?.map((message, m) => (
-                <Message key={m} i={m} message={message} pathname={pathname} />
+                <Message key={message?.id ?? m} i={m} message={message} pathname={pathname} />
               ))}
             </div>
 
@@ -223,13 +263,23 @@ function Message({ i, message, pathname }) {
 
       <div className={`flex flex-col space-y-1 ${right ? '' : 'items-end'} text-xs`}>
         <div className={`flex flex-row space-x-2 ${right ? '' : 'flex-row-reverse space-x-reverse'}`}>
-          {right ? <span>pewenger@pm.me</span> : null}
-          <span className="text-gray-600">6 days</span>
+          <span className="text-gray-800 font-medium">
+            {message?.sender?.email || (message?.is_admin ? 'Support' : 'Client')}
+          </span>
+          <span className="text-gray-500">{formatMessageTime(message?.created_at)}</span>
         </div>
 
-        <div className="bg-gray-200 rounded-md p-2 w-full max-w-[400px]">
+        <div
+          className={`rounded-2xl px-4 py-2 w-full max-w-[420px] shadow-sm ${
+            right ? 'bg-slate-900 text-white' : 'bg-white border border-slate-200 text-slate-800'
+          }`}
+        >
           {message.content}
         </div>
+
+        {isOwnMessage(pathname, message) && (
+          <span className="text-[11px] text-gray-500">{getReadStatus(message)}</span>
+        )}
       </div>
     </div>
   )
@@ -252,7 +302,12 @@ function LineTicket({ ticket, setChosedTicket }) {
         <span className="text-sm text-gray-600">{ticket?.creator?.email}</span>
       </div>
 
-      <div className="text-xs font-medium text-gray-500 h-full">
+      <div className="text-xs font-medium text-gray-500 h-full flex items-center space-x-2">
+        {!!ticket?.unread_count && (
+          <span className="bg-red-500 text-white rounded-full px-2 py-[2px] text-[11px]">
+            {ticket.unread_count}
+          </span>
+        )}
         <span>6 days</span>
       </div>
     </div>
@@ -272,4 +327,24 @@ function CirAcc() {
 
 function Cir({ children, width = 'w-[48px]', height = 'h-[48px]', bg = 'bg-gray-300' }) {
   return <div className={`flex items-center justify-center ${width} ${height} ${bg} rounded-full`}>{children}</div>
+}
+
+function formatMessageTime(value) {
+  if (!value) return ''
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return ''
+  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+}
+
+function isOwnMessage(pathname, message) {
+  if (!message) return false
+  return pathname === '/admin/tickets' ? message.is_admin : !message.is_admin
+}
+
+function getReadStatus(message) {
+  if (!message) return ''
+  if (message.is_admin) {
+    return message.read_by_user_at ? 'Read' : 'Unread'
+  }
+  return message.read_by_admin_at ? 'Read' : 'Unread'
 }
