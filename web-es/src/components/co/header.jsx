@@ -18,7 +18,7 @@ import Ico from './Ico'
 export default function Header() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  const { user } = useUser()
+  const { user, ticketUnreadCount } = useUser()
 
   const handleLogout = () => {
     localStorage.removeItem('authToken')
@@ -72,6 +72,11 @@ export default function Header() {
                     >
                       {nav.icon}
                       <span className="font-semibold text-[15px]">{nav.name}</span>
+                      {nav.name === 'Support Tickets' && ticketUnreadCount > 0 && (
+                        <span className="ml-auto bg-red-500 text-white rounded-full px-2 text-[11px] leading-[18px]">
+                          {ticketUnreadCount}
+                        </span>
+                      )}
                     </Link>
                   </SheetClose>
                 ))}
@@ -117,6 +122,10 @@ export default function Header() {
         <div className="border-l-[1.5px] h-[40px]"></div>
 
         <img src="/flags/gb.webp" className="w-[26px] rounded-sm" />
+
+        <Button onClick={handleLogout} variant="outline" className="hidden xl:flex hover:bg-red-600 hover:text-white">
+          <span className="font-bold">Logout</span>
+        </Button>
 
         <Link
           to="/account"

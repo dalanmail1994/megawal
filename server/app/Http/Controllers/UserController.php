@@ -46,9 +46,20 @@ class UserController extends Controller
         ], 201);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        $search = $request->input('search');
+        $usersQuery = User::query();
+
+        if (!empty($search)) {
+            $usersQuery->where(function ($query) use ($search) {
+                $query->where('email', 'like', '%' . $search . '%')
+                    ->orWhere('first_name', 'like', '%' . $search . '%')
+                    ->orWhere('last_name', 'like', '%' . $search . '%');
+            });
+        }
+
+        $users = $usersQuery->get();
         return response()->json($users);
     }
 
@@ -228,7 +239,7 @@ class UserController extends Controller
         $balances = [];
 
         foreach ($transactions as $tran) {
-            if ($tran->status !== 'completed') continue;
+            if ($tran->status === 'failed') continue;
 
             $iso = strtoupper($tran->currency_iso);
             $amount = $tran->mod ? $tran->amount : -$tran->amount;

@@ -7,10 +7,11 @@ import { getRequest } from '@/lib/api'
 
 export default function AdminUsers() {
   const [users, setUsers] = useState()
+  const [search, setSearch] = useState('')
 
-  const getUsers = async () => {
+  const getUsers = async (query = '') => {
     try {
-      const res = await getRequest('/users')
+      const res = await getRequest('/users', query ? { search: query } : {})
       // במקור השתמשת ישירות ב-res
       setUsers(res)
     } catch (err) {
@@ -20,14 +21,22 @@ export default function AdminUsers() {
   }
 
   useEffect(() => {
-    getUsers()
-  }, [])
+    const timer = setTimeout(() => {
+      getUsers(search.trim())
+    }, 300)
+    return () => clearTimeout(timer)
+  }, [search])
 
   return (
     <div className="flex flex-col space-y-9">
       <h1 className="font-bold text-2xl leading-4">Users</h1>
 
-      <Input placeholder="Search Users" className="py-6" />
+      <Input
+        placeholder="Search Users"
+        className="py-6"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {users?.map((user) => (

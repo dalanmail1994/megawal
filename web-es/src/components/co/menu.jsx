@@ -6,7 +6,7 @@ import { menuList } from '@/lib/general'
 
 export default function Menu() {
   const { pathname } = useLocation()
-  const { user } = useUser()
+  const { user, ticketUnreadCount } = useUser()
 
   const navs = [
     ...menuList.map(nav => ({
@@ -33,6 +33,11 @@ export default function Menu() {
           >
             {nav.icon}
             <span className="font-semibold text-[15px]">{nav.name}</span>
+            {nav.name === 'Support Tickets' && ticketUnreadCount > 0 && (
+              <span className="ml-1 bg-red-500 text-white rounded-full px-2 text-[11px] leading-[18px]">
+                {ticketUnreadCount}
+              </span>
+            )}
           </Link>
         ))}
       </div>

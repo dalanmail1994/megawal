@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react"
 import { useDropzone } from "react-dropzone"
 import { cn } from "@/lib/utils"
 
-export default function FileDropzone({ name }) {
+export default function FileDropzone({ name, onFileSelect }) {
   const [selectedFile, setSelectedFile] = useState(null)
 
   const onDrop = useCallback(
@@ -12,9 +12,12 @@ export default function FileDropzone({ name }) {
       if (acceptedFiles && acceptedFiles.length > 0) {
         const file = acceptedFiles[0]
         setSelectedFile(file)
+        if (onFileSelect) {
+          onFileSelect(name, file)
+        }
       }
     },
-    []
+    [name, onFileSelect]
   )
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
