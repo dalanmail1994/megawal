@@ -16,7 +16,8 @@ class MessageController extends Controller
         ]);
 
         $user = $request->user();
-        if ($user->user_type_id == 4 && $validated['is_admin']) {
+        $isAdmin = $user->user_type_id < 3;
+        if (!$isAdmin && $validated['is_admin']) {
             $validated['is_admin'] = false;
         }
 
@@ -33,7 +34,7 @@ class MessageController extends Controller
     public function index(Request $request, $ticketId)
     {
         $user = $request->user();
-        $isAdmin = $user->user_type_id < 4;
+        $isAdmin = $user->user_type_id < 3;
 
         if ($isAdmin) {
             Message::where('ticket_id', $ticketId)

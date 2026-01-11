@@ -36,7 +36,7 @@ class TicketController extends Controller
         $user = $request->user();
         $getAll = $request->boolean('all');
         $userid = $request->input('userid');
-        $isAdmin = $user->user_type_id < 4;
+        $isAdmin = $user->user_type_id < 3;
 
         $ticketsQuery = Ticket::with('creator')
             ->withCount([
@@ -61,4 +61,3 @@ class TicketController extends Controller
     }
 
 }
-

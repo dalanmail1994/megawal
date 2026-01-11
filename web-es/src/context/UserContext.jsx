@@ -48,7 +48,7 @@ export function UserProvider({ children }) {
 
     const fetchUnread = async () => {
       try {
-        const params = user.user_type_id < 4 ? { all: true } : {}
+        const params = user.user_type_id < 3 ? { all: true } : {}
         const res = await getRequest('/tickets', params)
         if (aborted || !Array.isArray(res)) return
         const totalUnread = res.reduce((sum, ticket) => sum + (ticket?.unread_count || 0), 0)
