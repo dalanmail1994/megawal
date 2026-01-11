@@ -23,6 +23,7 @@ export default function ChatBox({ userId }) {
   const [content, setContent] = useState('')
   const lastMessageIdRef = useRef(null)
   const lastUnreadTotalRef = useRef(null)
+  const messagesWrapRef = useRef(null)
 
   useEffect(() => {
     if (chosedTicket) {
@@ -30,6 +31,11 @@ export default function ChatBox({ userId }) {
       getMessage(chosedTicket?.id)
     }
   }, [chosedTicket])
+
+  useEffect(() => {
+    if (!messagesWrapRef.current) return
+    messagesWrapRef.current.scrollTop = messagesWrapRef.current.scrollHeight
+  }, [messages, chosedTicket?.id])
 
   const getMessage = async (id, { notify } = { notify: false }) => {
     try {
@@ -176,7 +182,7 @@ export default function ChatBox({ userId }) {
         <div className="flex flex-row h-full">
           {/* הודעות */}
           <div className="flex flex-col items-stretch flex-grow w-0">
-            <div className="flex flex-col p-4 space-y-2 h-[550px] overflow-y-scroll">
+            <div ref={messagesWrapRef} className="flex flex-col p-4 space-y-2 h-[550px] overflow-y-scroll">
               {noTicketSelected && (
                 <div className="flex-grow flex items-center justify-center">
                   <img src="/ic-chat-active.svg" />
