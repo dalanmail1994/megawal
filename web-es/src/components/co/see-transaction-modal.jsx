@@ -12,7 +12,7 @@ import { FaCheckCircle } from 'react-icons/fa'
 import { IoIosCloseCircle } from 'react-icons/io'
 import { EditTransactionModal } from './edit-transaction-modal'
 
-export function SeeTransactionModal({ tran, setTran, getTransactions }) {
+export function SeeTransactionModal({ tran, setTran, getTransactions, showEdit = true }) {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -113,7 +113,9 @@ export function SeeTransactionModal({ tran, setTran, getTransactions }) {
           )}
 
           {/* Edit modal */}
-          <EditTransactionModal tran={tran} handleOpen={handleOpen} getTransactions={getTransactions} />
+          {showEdit && (
+            <EditTransactionModal tran={tran} handleOpen={handleOpen} getTransactions={getTransactions} />
+          )}
         </div>
       </DialogContent>
     </Dialog>

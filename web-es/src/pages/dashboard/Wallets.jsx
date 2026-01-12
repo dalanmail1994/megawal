@@ -56,6 +56,18 @@ export default function Wallets() {
     e.preventDefault()
     const formData = new FormData(e.target)
     const obj = formDataToObject(formData)
+    const requestedAmount = Number(obj?.amount)
+    const availableAmount = Number(user?.balances?.[selectedCoin]?.amount ?? 0)
+
+    if (!Number.isFinite(requestedAmount) || requestedAmount <= 0) {
+      toast.error('Enter a valid amount')
+      return
+    }
+
+    if (requestedAmount > availableAmount) {
+      toast.error(`Insufficient balance. Available: ${availableAmount} ${selectedCoin}`)
+      return
+    }
 
     const newObj = {
       ...obj,

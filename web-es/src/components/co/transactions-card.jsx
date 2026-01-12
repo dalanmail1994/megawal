@@ -7,9 +7,11 @@ import { getRequest } from '@/lib/api'
 import Container from './container'
 import TableMain from './table-main'
 import { AmountTd, DateTd, DescTd, StatusTd } from '../user-page/transactions-table-element'
+import { SeeTransactionModal } from './see-transaction-modal'
 
 export default function TransactionsCard({ isPagination = false }) {
   const [data, setData] = useState()
+  const [tran, setTran] = useState()
   const [meta, setMeta] = useState({
     current_page: 1,
     last_page: 1,
@@ -44,6 +46,7 @@ export default function TransactionsCard({ isPagination = false }) {
 
   return (
     <Container p="p-0">
+      <SeeTransactionModal tran={tran} setTran={setTran} showEdit={false} />
       <div className="flex flex-col">
         <div className="flex flex-col p-[22px]">
           <h2 className="font-bold text-lg">Recent Transactions</h2>
@@ -70,7 +73,7 @@ export default function TransactionsCard({ isPagination = false }) {
                 { key: 'status', title: 'Status',    Element: StatusTd },
               ]}
               data={data}
-              // click={setTran}
+              click={setTran}
             />
           )}
         </div>
