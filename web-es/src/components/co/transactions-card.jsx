@@ -46,7 +46,7 @@ export default function TransactionsCard({ isPagination = false }) {
 
   return (
     <Container p="p-0">
-      <SeeTransactionModal tran={tran} setTran={setTran} showEdit={false} />
+      <SeeTransactionModal tran={tran} setTran={setTran} showEdit={false} showCreator={false} />
       <div className="flex flex-col">
         <div className="flex flex-col p-[22px]">
           <h2 className="font-bold text-lg">Recent Transactions</h2>

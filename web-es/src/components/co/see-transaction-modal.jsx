@@ -12,7 +12,13 @@ import { FaCheckCircle } from 'react-icons/fa'
 import { IoIosCloseCircle } from 'react-icons/io'
 import { EditTransactionModal } from './edit-transaction-modal'
 
-export function SeeTransactionModal({ tran, setTran, getTransactions, showEdit = true }) {
+export function SeeTransactionModal({
+  tran,
+  setTran,
+  getTransactions,
+  showEdit = true,
+  showCreator = true,
+}) {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -60,19 +66,21 @@ export function SeeTransactionModal({ tran, setTran, getTransactions, showEdit =
 
         <div className="flex flex-col space-y-5 items-center text-center">
           {/* Banner: creator */}
-          <div className="p-3 bg-[#cafdf5] rounded-md flex flex-row items-center space-x-3">
-            <svg className="text-sm w-[30px]" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
-              <path
-                fill="#00b8d9"
-                fillRule="evenodd"
-                d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-10 5.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-            <p className="text-sm font-medium text-[#003768]">
-              This transaction was added by {tran?.creator?.email}
-            </p>
-          </div>
+          {showCreator && (
+            <div className="p-3 bg-[#cafdf5] rounded-md flex flex-row items-center space-x-3">
+              <svg className="text-sm w-[30px]" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  fill="#00b8d9"
+                  fillRule="evenodd"
+                  d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10m-10 5.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              <p className="text-sm font-medium text-[#003768]">
+                This transaction was added by {tran?.creator?.email}
+              </p>
+            </div>
+          )}
 
           {/* Status icon */}
           <StatusIcon />

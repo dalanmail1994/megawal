@@ -38,6 +38,7 @@ Route::middleware(['auth:sanctum', 'last.action'])->group(function () {
     Route::prefix('user')->group(function () {
         Route::get('/', [UserController::class, 'show']);                           // WORK
         Route::put('/reset-password', [UserController::class, 'resetPassword'])->middleware('log.request:reset-password');
+        Route::put('/support-name', [UserController::class, 'updateSupportName']);
     });
 
 
@@ -94,7 +95,6 @@ Route::middleware(['auth:sanctum', 'last.action'])->group(function () {
     Route::get('/currencies/{user}', [CurrencyController::class, 'index']);
 
 });
-
 
 
 

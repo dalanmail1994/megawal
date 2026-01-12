@@ -10,7 +10,7 @@ import { InputChat } from '@/components/ui/input-chat'
 import { Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { CreateTicketModal } from './create-ticket-modal'
-import { getRequest, postRequest } from '@/lib/api'
+import { getRequest, postRequest, putRequest } from '@/lib/api'
 import { useUser } from '@/context/UserContext'
 
 export default function ChatBox({ userId }) {
@@ -21,6 +21,8 @@ export default function ChatBox({ userId }) {
   const [chosedTicket, setChosedTicket] = useState()
   const [messages, setMessages] = useState()
   const [content, setContent] = useState('')
+  const [supportName, setSupportName] = useState('Support')
+  const [isUpdatingSupportName, setIsUpdatingSupportName] = useState(false)
   const lastMessageIdRef = useRef(null)
   const lastUnreadTotalRef = useRef(null)
   const messagesWrapRef = useRef(null)
@@ -31,6 +33,12 @@ export default function ChatBox({ userId }) {
       getMessage(chosedTicket?.id)
     }
   }, [chosedTicket])
+
+  useEffect(() => {
+    if (pathname === '/admin/tickets') {
+      setSupportName(user?.support_name || 'Support')
+    }
+  }, [user?.support_name, pathname])
 
   useEffect(() => {
     if (!messagesWrapRef.current) return
@@ -46,7 +54,10 @@ export default function ChatBox({ userId }) {
         if (notify && previousMessageId && lastMessage?.id && lastMessage.id !== previousMessageId) {
           const isFromOtherSide = pathname === '/admin/tickets' ? !lastMessage.is_admin : lastMessage.is_admin
           if (isFromOtherSide) {
-            const sender = lastMessage?.sender?.email || (lastMessage.is_admin ? 'Support' : 'Client')
+            const sender = getSenderDisplayName(
+              lastMessage?.sender,
+              lastMessage.is_admin ? 'Support' : 'Client',
+            )
             toast(`New message from ${sender}`)
           }
         }
@@ -117,6 +128,20 @@ export default function ChatBox({ userId }) {
   }
 
   const noTicketSelected = messages == null && chosedTicket == undefined
+
+  const updateSupportName = async () => {
+    if (!supportName.trim()) return
+    setIsUpdatingSupportName(true)
+    try {
+      const res = await putRequest('/user/support-name', { support_name: supportName.trim() })
+      setSupportName(res?.support_name || supportName.trim())
+      toast.success(res?.message || 'Support name updated')
+    } catch (err) {
+      toast.error(err?.response?.data?.message || 'Failed to update support name')
+    } finally {
+      setIsUpdatingSupportName(false)
+    }
+  }
 
   return (
     <Container p="p-0 flex flex-row flex-grow">
@@ -230,10 +255,16 @@ export default function ChatBox({ userId }) {
 
               <div className="flex flex-col space-y-[2px]">
                 <span className="text-[13px] font-medium text-gray-700">Support Name</span>
-                <Input defaultValue="Support" />
+                <Input
+                  value={supportName}
+                  onChange={(e) => setSupportName(e.target.value)}
+                  disabled={isUpdatingSupportName}
+                />
               </div>
 
-              <Button>Update Admin Name</Button>
+              <Button onClick={updateSupportName} disabled={isUpdatingSupportName}>
+                Update Admin Name
+              </Button>
 
               <div className="p-3 bg-[#cafdf5] rounded-md flex flex-row items-start space-x-2">
                 <svg className="text-sm w-[50px]" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
@@ -270,7 +301,7 @@ function Message({ i, message, pathname }) {
       <div className={`flex flex-col space-y-1 ${right ? '' : 'items-end'} text-xs`}>
         <div className={`flex flex-row space-x-2 ${right ? '' : 'flex-row-reverse space-x-reverse'}`}>
           <span className="text-gray-800 font-medium">
-            {message?.sender?.email || (message?.is_admin ? 'Support' : 'Client')}
+            {getSenderDisplayName(message?.sender, message?.is_admin ? 'Support' : 'Client')}
           </span>
           <span className="text-gray-500">{formatMessageTime(message?.created_at)}</span>
         </div>
@@ -353,4 +384,10 @@ function getReadStatus(message) {
     return message.read_by_user_at ? 'Read' : 'Unread'
   }
   return message.read_by_admin_at ? 'Read' : 'Unread'
+}
+
+function getSenderDisplayName(sender, fallback) {
+  if (!sender) return fallback
+  const fullName = [sender.first_name, sender.last_name].filter(Boolean).join(' ').trim()
+  return sender.support_name || sender.name || fullName || sender.email || fallback
 }

@@ -316,6 +316,27 @@ class UserController extends Controller
         ]);
     }
 
+    public function updateSupportName(Request $request)
+    {
+        $user = $request->user();
+        if ($user->user_type_id >= 3) {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
+
+        $validated = $request->validate([
+            'support_name' => 'required|string|max:255',
+        ]);
+
+        $user->update([
+            'support_name' => $validated['support_name'],
+        ]);
+
+        return response()->json([
+            'message' => 'Support name updated',
+            'support_name' => $user->support_name,
+        ]);
+    }
+
 
 
 
