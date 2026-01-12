@@ -375,7 +375,9 @@ function formatMessageTime(value) {
 
 function isOwnMessage(pathname, message) {
   if (!message) return false
-  return pathname === '/admin/tickets' ? message.is_admin : !message.is_admin
+  return pathname === '/admin/tickets'
+    ? Boolean(message.is_admin)
+    : !Boolean(message.is_admin)
 }
 
 function getReadStatus(message) {
