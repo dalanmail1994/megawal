@@ -5,20 +5,31 @@ import Ico from '@/components/co/Ico'
 import { Button } from '@/components/ui/button'
 
 export default function Stake() {
+  const stakePlans = [
+    { key: 'btc', name: 'Bitcoin', symbol: 'BTC', icon: '/coins/btc.svg', rate: '2.7%', min: '0.005', max: '1.0' },
+    { key: 'eth', name: 'Ethereum', symbol: 'ETH', icon: '/coins/eth.svg', rate: '3.1%', min: '0.10', max: '25' },
+    { key: 'usdt', name: 'Tether', symbol: 'USDT', icon: '/coins/usdt.svg', rate: '4.2%', min: '100', max: '10000' },
+    { key: 'bnb', name: 'BNB', symbol: 'BNB', icon: '/coins/bnb.svg', rate: '3.4%', min: '0.50', max: '50' },
+    { key: 'sol', name: 'Solana', symbol: 'SOL', icon: '/coins/solana.svg', rate: '4.0%', min: '5', max: '200' },
+    { key: 'xrp', name: 'Ripple', symbol: 'XRP', icon: '/coins/xrp.svg', rate: '3.0%', min: '200', max: '50000' },
+    { key: 'ada', name: 'Cardano', symbol: 'ADA', icon: '/coins/ada.svg', rate: '3.3%', min: '300', max: '80000' },
+    { key: 'doge', name: 'Dogecoin', symbol: 'DOGE', icon: '/coins/doge.svg', rate: '3.6%', min: '1000', max: '200000' },
+  ]
+
   return (
     <div className="flex flex-col space-y-7">
       <h1 className="font-bold text-2xl">Stake Plans</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 xl:gap-10">
-        {[1, 2, 3, 4, 5, 6].map((i) => (
-          <StakeCard key={i} />
+        {stakePlans.map((plan) => (
+          <StakeCard key={plan.key} plan={plan} />
         ))}
       </div>
     </div>
   )
 }
 
-function StakeCard() {
+function StakeCard({ plan }) {
   const [selected, setSelected] = useState(0) // 0=7d, 1=14d, 2=30d
 
   return (
@@ -26,8 +37,8 @@ function StakeCard() {
       <div className="flex flex-col items-center space-y-8">
         {/* Header */}
         <div className="flex flex-col items-center space-y-4">
-          <Ico path="/coins/btc.svg" width="45px" height="45px" />
-          <h2 className="font-semibold text-xl text-gray-800">Bitcoin Stake</h2>
+          <Ico path={plan.icon} width="45px" height="45px" />
+          <h2 className="font-semibold text-xl text-gray-800">{plan.name} Stake</h2>
         </div>
 
         {/* Durations */}
@@ -60,9 +71,9 @@ function StakeCard() {
 
         {/* Details */}
         <div className="flex flex-col w-full text-[13px] text-gray-500">
-          <SmLine A="Rate" B="2.70%" />
-          <SmLine A="Min Value" B="0.0052792033 BTC" />
-          <SmLine A="Max Value" B="1.0030486343 BTC" />
+          <SmLine A="Rate" B={plan.rate} />
+          <SmLine A="Min Value" B={`${plan.min} ${plan.symbol}`} />
+          <SmLine A="Max Value" B={`${plan.max} ${plan.symbol}`} />
         </div>
 
         {/* Action */}
